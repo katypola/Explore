@@ -1,0 +1,11 @@
+<div id="astroMain">
+	<h1>This will be the Astronomy main page.</h1><br />
+
+	<% @nasa_info.each do |apod| %>
+		<h1><%= apod["title"] %></h1>
+		<img src="<%= apod["url"] %>" />
+		<p><%= apod["date"] %></p>
+		<p><%= apod["explanation"] %></p>
+	<% end %>
+
+</div>

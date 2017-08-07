@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  apodid: 1
+  apodtitle: MyString
+  apodpic: MyString
+  hdapod: MyString
+  cright: MyString
+  apoddate: MyString
+  expl: MyText
+  mtype: MyString
+  sversion: MyString
+
+two:
+  apodid: 1
+  apodtitle: MyString
+  apodpic: MyString
+  hdapod: MyString
+  cright: MyString
+  apoddate: MyString
+  expl: MyText
+  mtype: MyString
+  sversion: MyString

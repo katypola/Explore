@@ -1,0 +1,12 @@
+<div id="articleDiv">
+	<h1>This will be the Article page.</h1><br />
+
+	<% @news_info.each do |article|  %>
+		<h1><%= article["title"] %></h1>
+		<a href="<%= article["url"] %>">Read full article</a><br />
+		<img class="newsImage" src="<%= article["urlToImage"] %>" />
+		<p><%= article["publishedAt"] %></p>
+		<p><%= article["description"] %></p><br />
+	<% end %>
+	
+</div>

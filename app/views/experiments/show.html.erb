@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @experiment.title %>
+</p>
+
+<p>
+  <strong>Overview:</strong>
+  <%= @experiment.overview %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @experiment.image %>
+</p>
+
+<p>
+  <strong>Field:</strong>
+  <%= @experiment.field %>
+</p>
+
+<%= link_to 'Edit', edit_experiment_path(@experiment) %> |
+<%= link_to 'Back', experiments_path %>

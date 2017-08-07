@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @kit.name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @kit.image %>
+</p>
+
+<p>
+  <strong>Experiment:</strong>
+  <%= @kit.experiment %>
+</p>
+
+<%= link_to 'Edit', edit_kit_path(@kit) %> |
+<%= link_to 'Back', kits_path %>
