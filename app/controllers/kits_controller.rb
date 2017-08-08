@@ -10,6 +10,10 @@ class KitsController < ApplicationController
   # GET /kits/1
   # GET /kits/1.json
   def show
+    @item = Item.find_by(params[:id])
+    render locals: {
+      kit: @kit
+    }
   end
 
   # GET /kits/new

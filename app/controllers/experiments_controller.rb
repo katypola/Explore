@@ -10,7 +10,16 @@ class ExperimentsController < ApplicationController
   # GET /experiments/1
   # GET /experiments/1.json
   def show
+    @steps = Step.all
+    @step = Step.find_by(params[:id])
+    # @kits = Kit.all
+    # @kits = @experiment.kits
+
+    @item = Item.find_by(params[:id])
   end
+
+  # def steps
+  # end
 
   # GET /experiments/new
   def new

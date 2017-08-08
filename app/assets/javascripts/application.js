@@ -13,3 +13,8 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+// making modal close when you click "close" button
+function closeModal() {
+  document.getElementById('kitModal').style.display = "none";
+}

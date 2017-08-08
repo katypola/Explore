@@ -6,7 +6,7 @@
     <%= f.input :overview %>
     <%= f.input :image %>
     <%= f.association :field %>
-  </div>
+    <%# f.select :field, options_for_select( Field.all.map{|s| [s.field]}) %>
 
   <div class="form-actions">
     <%= f.button :submit %>

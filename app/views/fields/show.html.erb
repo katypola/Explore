@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<div id="fieldShowDiv">
 <p>
   <strong>Name:</strong>
   <%= @field.name %>
@@ -12,8 +13,22 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @field.image %>
+  <span class="fieldShowImage"><%= image_tag @field.image %></span>
 </p>
+
+<p>
+  <strong>Experiments:</strong>
+<% if @field.experiments %>
+	<% @field.experiments.each do |experiment| %>
+		<a href="/experiments/<%= experiment.id %>"><%= experiment.title %></a><br />
+	<% end %>
+<% else %>
+	<p>Sorry, no experiments in this field yet... coming soon!</p>
+<% end%>
+</p>
+
+<br /><br />
 
 <%= link_to 'Edit', edit_field_path(@field) %> |
 <%= link_to 'Back', fields_path %>
+</div>

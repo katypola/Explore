@@ -1,3 +1,20 @@
-<h1>Science stuff.</h1>
+<div id="homeDiv">
+	<h1>Science stuff.</h1>
+		<!-- show login form if user isn't signed in -->
+		<% if user_signed_in? %>
+			<h3>Welcome, <a href="/<%= current_user.username %>"><%= current_user.full_name %></a>!</h3><br /><br />
+			<h3>Fields:</h3>
+				<% @fields.each do |field| %>
+					<a href="/fields/<%= field.id %>"><%= field.name %></a><br />
+				<% end %>
 
-<!-- <%# render file: "devise/sessions/new" %> -->
+			<h3>Article feed:</h3>
+				<%= render file: "article/index" %>
+		<% else %>
+			<%= render file: "devise/sessions/new" %>
+			<h3>Fields:</h3>
+				<% @fields.each do |field| %>
+					<a href="/fields/<%= field.id %>"><%= field.name %></a><br />
+				<% end %>
+		<% end %>
+</div>

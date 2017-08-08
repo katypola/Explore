@@ -1,23 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Features Used
 
-Things you may want to cover:
+* Running on Ruby 2.4.0
 
-* Ruby version
+* Using Rails scaffold feature to build database
 
-* System dependencies
+* Use Devise gem to create user
 
-* Configuration
+* Use bcrypt gem to encrypt passwords
 
-* Database creation
+* Use paperclip gem for image uploads
 
-* Database initialization
+* Use simple_form gem for form formatting
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
 
 ## Build Project Database
 
@@ -131,11 +127,10 @@ end' *
 
  * in routes: get '/search' => 'search#index' *
 
-
 ````
 ## Incorporate NASA APOD API
 ````
- * add API Key to bash profile, give it a name (APOD_API_KEY) *
+* add API Key to bash profile, give it a name (APOD_API_KEY) *
 
  rails g model apod apodid:integer apodtitle:string apodpic:string hdapod:string cright:string apoddate:string expl:text mtype:string sversion:string
 
@@ -168,7 +163,7 @@ end' *
 ````
 ## Incorporate NATIONAL GEOGRAPHIC NEWS API
 ````
- * add API Key to bash profile, give it a name (NEWS_API_KEY) *
+* add API Key to bash profile, give it a name (NEWS_API_KEY) *
 
  * in article model:
  	def self.get_api_info
@@ -195,6 +190,20 @@ end' *
 		<p><%= article["description"] %></p><br />
 	<% end %> *
 
+* in application helper:
+	def resource_name
+		:user
+	end
+
+	def resource
+		@resource ||= User.new
+	end
+
+	def devise_mapping
+		@devise_mapping ||= Devise.mappings[:user]
+	end *
+
+touch app/views/static/profile.html.erb
 
 ???REMOVE???? info in migration from model creation command above?
 ???REMOVE???? search model and controller

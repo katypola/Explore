@@ -1,3 +1,20 @@
-// Place all the styles related to the fields controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// start of field index page:
+#fieldIndexDiv {
+	text-align: center;
+	margin: 0 auto;
+
+	.fieldImageSpan img {
+		width: 30vw;
+	}
+}
+// end of field index page
+
+// start of field show page:
+#fieldShowDiv {
+	text-align: center;
+
+	.fieldShowImage img {
+		width: 50vw;
+	}	
+}
+// end of field show page

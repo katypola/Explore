@@ -1,8 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<div id="experimentShowDiv">
+
 <p>
   <strong>Title:</strong>
   <%= @experiment.title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <span class="experimentImageSpan"><%= image_tag @experiment.image %></span>
 </p>
 
 <p>
@@ -11,14 +18,30 @@
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @experiment.image %>
-</p>
-
-<p>
   <strong>Field:</strong>
-  <%= @experiment.field %>
+  <a href="/fields/<%= @experiment.field.id %>"><%= @experiment.field.name %></a>
 </p>
 
 <%= link_to 'Edit', edit_experiment_path(@experiment) %> |
 <%= link_to 'Back', experiments_path %>
+
+<br /><br />
+
+<% if @experiment.kits %>
+	<% @experiment.kits.each do |kit| %>
+		<a class="kitLink" href="<%= exper_path(@experiment,"kit") %>">See Kit</a>
+    <!-- <div id="kitModal"> -->
+		  <span id ="kitModal" class="hideKit<%= " active" if params[:pg] == "kit" %>"><%= render file: 'kits/show', locals: {kit: kit} %><br />
+        <button type="button" name="button" onclick="closeModal()">Close</button></span>
+    <!-- </div> -->
+	<% end %>
+<% else %>
+	<p>This experiment doesn't have a kit.</p>
+<% end %>
+
+<br />
+<a class="stepLink<%= " inactive" if params[:pg] == "steps" %>" href="/experiments/<%= @experiment.id %>/steps">See Steps</a>
+<span class="hideSteps<%= " active" if params[:pg] == "steps" %>"><%= render 'steps', exper: @experiment %></span>
+<br />
+
+</div>

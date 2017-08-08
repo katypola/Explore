@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static#home'
   get '/apod/main' => 'apod#main'
-  get '/article/index' => 'article#index'
+  get '/articles' => 'article#index'
   get '/search' => 'search#index'
+  get '/experiments/:id(/:pg)' => 'experiments#show', as: :exper
+  get '/:username(/:page)' => 'static#profile', as: :profile
 end

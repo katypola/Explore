@@ -1,0 +1,9 @@
+<%= @user.full_name %><br />
+
+<% if @user.experiments %>
+	<% @user.experiments.each do |experiment| %>
+		<a href="/experiments/<%= experiment.id %>"><%= experiment.title %></a><br />
+	<% end %>
+<% else %>
+	<p>No experiments yet...</p>
+<% end %>
