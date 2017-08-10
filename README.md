@@ -113,9 +113,12 @@ rails g model user_article
   end
 end' *
 
- ````
- rails db:migrate
- (rails s)
+rails db:migrate
+
+````
+## Build Search
+````
+*build model and controller, and views *
 
  rails g model search
  rails g controller search
@@ -204,8 +207,10 @@ end' *
 	end *
 
 touch app/views/static/profile.html.erb
+touch app/views/experiments/_steps.html.erb
 
 ???REMOVE???? info in migration from model creation command above?
 ???REMOVE???? search model and controller
 ???REMOVE???? static model
 ???REMOVE???? attributes from article migration
+````
