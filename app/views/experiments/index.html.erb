@@ -1,33 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div id="experimentIndex">
 
 <h1>Experiments</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Overview</th>
-      <th>Image</th>
-      <th>Field</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @experiments.each do |experiment| %>
-      <tr>
-        <td><%= experiment.title %></td>
-        <td><%= experiment.overview %></td>
-        <td><%= experiment.image %></td>
-        <td><%= experiment.field %></td>
-        <td><%= link_to 'Show', experiment %></td>
-        <td><%= link_to 'Edit', edit_experiment_path(experiment) %></td>
-        <td><%= link_to 'Destroy', experiment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+  <% @experiments.each do |experiment| %>
+    <h3><%= experiment.title %></h3><br />
+    <%= experiment.overview %><br />
+    <a href="/fields/<%= experiment.field.id %>"><%= experiment.field.name %></a><br />
+    <%= image_tag experiment.image %><br />
+    <%= link_to 'Show', experiment %>
+    <%= link_to 'Edit', edit_experiment_path(experiment) %>
+    <%= link_to 'Destroy', experiment, method: :delete, data: { confirm: 'Are you sure?' } %><br /><br />
+  <% end %>
+  
 <br>
 
 <%= link_to 'New Experiment', new_experiment_path %>
+
+</div>

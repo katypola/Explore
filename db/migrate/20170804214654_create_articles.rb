@@ -4,6 +4,7 @@ class CreateArticles < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :picture
       t.string :alink
+      t.string :date
       t.text :overview
 
       t.timestamps

@@ -1,20 +1,7 @@
-<p id="notice"><%= notice %></p>
-
 <div id="fieldShowDiv">
-<p>
-  <strong>Name:</strong>
-  <%= @field.name %>
-</p>
-
-<p>
-  <strong>Overview:</strong>
-  <%= @field.overview %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <span class="fieldShowImage"><%= image_tag @field.image %></span>
-</p>
+  <h1><%= @field.name %></h1>
+  <%= @field.overview %><br />
+  <span class="fieldShowImage"><%= image_tag @field.image %></span><br />
 
 <p>
   <strong>Experiments:</strong>

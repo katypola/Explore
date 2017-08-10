@@ -29,7 +29,7 @@
     	font-size: 20px;
     	background-color: rgba(255, 255, 255, .7);
     	margin-left: 32.5vw;
-    	margin-top: -60vh;
+    	margin-top: -70vh;
     	// overflow-y: scroll;
     	border: 2px solid rgba(102, 102, 102, 0.7);
     	border-radius: 70px;
@@ -40,3 +40,14 @@
 	}
 }
 // end of experiment show page
+
+// start of experiment index:
+#experimentIndex {
+	text-align: center;
+	margin: 0 auto;
+
+	img {
+		width: 30vw;
+	}
+}
+// end of experiment index

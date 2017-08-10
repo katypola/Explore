@@ -5,15 +5,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :location
   has_many :user_fields, dependent: :destroy
-  has_many :fields, through: :user_fields, dependent: :destroy
+  has_many :fields, through: :user_fields
   has_many :user_experiments, dependent: :destroy
-  has_many :experiments, through: :user_experiments, dependent: :destroy
+  has_many :experiments, through: :user_experiments
   has_many :user_kits, dependent: :destroy
-  has_many :kits, through: :user_kits, dependent: :destroy
+  has_many :kits, through: :user_kits
   has_many :kit_items, dependent: :destroy
-  has_many :items, through: :kit_items, dependent: :destroy
+  has_many :items, through: :kit_items
   has_many :user_articles, dependent: :destroy
-  has_many :articles, through: :user_articles, dependent: :destroy
+  has_many :articles, through: :user_articles
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_attached_file :propic, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/assets/default/:style/default_pic.png"

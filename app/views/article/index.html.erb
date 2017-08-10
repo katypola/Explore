@@ -6,6 +6,32 @@
 		<img class="newsImage" src="<%= article["urlToImage"] %>" />
 		<p><%= article["publishedAt"] %></p>
 		<p><%= article["description"] %></p><br />
+		<% if user_signed_in? && current_user.articles %>
+			<% current_user.articles.each do |userarticle| %>
+				<% if userarticle.alink == article["url"] %>
+            		<%= button_to 'Remove From Saved Articles', article_remove_path(userarticle) %>
+          		<% else %>
+          			<% link_to(article["url"]) do %>
+						<div class="addArticle">
+            				<%= button_to "Save Article To Your Profile", { action: 'add', controller: 'article', method: :post}, {params: { url: article["url"], urlToImage: article["urlToImage"], title: article["title"], description: article["description"], publishedAt: article["publishedAt"] }, remote: true} %>
+            			</div>
+            		<% end %>
+          		<% end %>
+          	<% end %>
+        <% elsif user_signed_in? && current_user.articles.nil? %>
+        	<% current_user.articles.each do |userarticle| %>
+        		<%= button_to 'Add Article', article_add_path(userarticle) %>
+        	<% end %>
+        <% elsif !user_signed_in? %>
+        	<p>Sign in and save articles</p>
+		<% end %>
 	<% end %>
 	
 </div>
+
+
+
+<!-- <%# link_to(article["url"]) do %>
+				<div class="addArticle"><%# button_to "Save Article To Your Profile", { action: 'add', controller: 'article', method: :post}, {params: { url: article["url"], urlToImage: article["urlToImage"], title: article["title"], description: article["description"], publishedAt: article["publishedAt"] }, remote: true} %>
+            	</div> -->
+            	<!-- <%# end %> -->

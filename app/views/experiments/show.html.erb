@@ -2,20 +2,11 @@
 
 <div id="experimentShowDiv">
 
-<p>
-  <strong>Title:</strong>
-  <%= @experiment.title %>
-</p>
+  <h2><%= @experiment.title %></h2>
 
-<p>
-  <strong>Image:</strong>
-  <span class="experimentImageSpan"><%= image_tag @experiment.image %></span>
-</p>
+  <span class="experimentImageSpan"><%= image_tag @experiment.image %></span><br />
 
-<p>
-  <strong>Overview:</strong>
   <%= @experiment.overview %>
-</p>
 
 <p>
   <strong>Field:</strong>

@@ -1,0 +1,31 @@
+<div id="userArticlePage">
+	<h1>My Articles</h1>
+
+	<% if user_signed_in? && current_user == @user %>
+		<% if (@user.articles.nil? or @user.articles == []) %>
+			<h3>Save some articles to your profile!</h3>
+		<% else %>
+			<% @user.articles.each do |article| %>
+				<span class ="articleDiv">
+					<a class="articlePreview" href="<%= article.alink %>">
+						<%= image_tag article.picture %><br />
+						<%= article.name %></a><br />
+					<%= button_to 'Remove Article', article_remove_path(article) %>
+				</span>
+			<% end %>
+		<% end %>
+
+	<% else %>
+		<% if (@user.articles.nil? or @user.articles == []) %>
+			<h3>Sorry, this user hasn't saved any articles yet!</h3>
+		<% else %>
+			<% @user.articles.each do |article| %>
+				<span class ="articleDiv">
+					<a class="articlePreview" href="<%= article.alink %>">
+						<%= image_tag article.picture %><br />
+						<%= article.name %></a><br />
+				</span>
+			<% end %>
+		<% end %>
+	<% end %>
+</div>

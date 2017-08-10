@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170807194954) do
     t.string "name"
     t.string "picture"
     t.string "alink"
+    t.string "date"
     t.text "overview"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

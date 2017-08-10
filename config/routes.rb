@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   get '/articles' => 'article#index'
   get '/search' => 'search#index'
   get '/experiments/:id(/:pg)' => 'experiments#show', as: :exper
+  post '/article/add' => 'article#add', as: :article_add
+  post '/article/:id/remove' => 'article#remove', as: :article_remove
   get '/:username(/:page)' => 'static#profile', as: :profile
 end
