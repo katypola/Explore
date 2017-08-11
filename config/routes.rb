@@ -15,5 +15,7 @@ Rails.application.routes.draw do
   get '/experiments/:id(/:pg)' => 'experiments#show', as: :exper
   post '/article/add' => 'article#add', as: :article_add
   post '/article/:id/remove' => 'article#remove', as: :article_remove
+  post '/experiments/:id/add' => 'experiments#add', as: :experiment_add
+  post '/experiments/:id/remove' => 'experiments#remove', as: :experiment_remove
   get '/:username(/:page)(/:post_id)' => 'static#profile', as: :profile
 end

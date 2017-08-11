@@ -18,6 +18,33 @@ class ExperimentsController < ApplicationController
     @item = Item.find_by(params[:id])
   end
 
+  # Add experiments to userexperiments
+  def add
+    # define current user
+   @user = current_user
+    # look for the experiment by experiment.id
+   @experiment = Experiment.find(params[:id])
+    # define if the userexperiment table exists
+   @userexperiment = UserExperiment.find_by(experiment_id: params[:id], user_id: current_user.id)
+   if @userexperiment
+    #  if it doesnt exist, then push the experiment into the userexperiment join table
+   else
+     @user.experiments << @experiment
+   end
+   redirect_to profile_path(@user.username,:experiment)
+  end
+
+  def remove
+    @user = current_user
+    @experiment = Experiment.find(params[:id])
+    @userexperiment = UserExperiment.find_by(experiment_id: params[:id], user_id: current_user.id)
+    unless @userexperiment.nil?
+      @userexperiment.destroy
+    else
+    end
+    redirect_back(fallback_location: profile_path(@user.username,:experiment))
+  end
+
   # def steps
   # end
 

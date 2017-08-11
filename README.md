@@ -209,6 +209,41 @@ rails db:migrate
 touch app/views/static/profile.html.erb
 touch app/views/experiments/_steps.html.erb
 
+* implement UJS for add/remove article buttons, to enable users to save articles to their profiles *
+
+````
+## Create Registrations Controller
+````
+rails g controller registration
+
+* and add: *
+
+private
+
+def sign_up_params
+  params.require(:user).permit(:fname, :lname, :email, :username, :location_id, :hometown, :propic, :password, :password_confirmation)
+end
+
+def account_update_params
+  params.require(:user).permit(:fname, :lname, :email, :username, :location_id, :hometown, :propic, :password, :password_confirmation, :current_password)
+end
+
+* in application controller, add: *
+
+def after_sign_in_path_for(resource_or_scope)
+    profile_path(current_user.username)
+  end
+def after_sign_up_path_for(resource_or_scope)
+  profile_path(current_user.username)
+end
+
+protected
+
+def configure_permitted_parameters
+  devise_parameter_sanitizer.permit(:sign_up, keys: [:fname, :lname, :email, :username, :location_id, :propic, :password, :password_confirmation])
+end
+
+
 ???REMOVE???? info in migration from model creation command above?
 ???REMOVE???? search model and controller
 ???REMOVE???? static model

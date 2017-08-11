@@ -13,9 +13,16 @@
   <a href="/fields/<%= @experiment.field.id %>"><%= @experiment.field.name %></a>
 </p>
 
-<%= link_to 'Edit', edit_experiment_path(@experiment) %> |
-<%= link_to 'Back', experiments_path %>
+<% if UserExperiment.find_by(experiment_id: @experiment.id, user_id: current_user.id) %>
+  <%= button_to 'Unsave Experiment', experiment_remove_path(@experiment) %>
+<% else %>
+  <%= button_to 'Save Experiment', experiment_add_path(@experiment) %>
+<% end %><br />
 
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to 'Edit', edit_experiment_path(@experiment) %> |
+  <%= link_to 'Back', experiments_path %>
+<% end %>
 <br /><br />
 
 <% if @experiment.kits %>
