@@ -1,0 +1,30 @@
+<div id="userPostDiv">
+<h2>Posts</h2>
+	<% if user_signed_in? && current_user == @user %>
+		<% if (@user.posts.nil? || @user.posts == []) %>
+			<h4>Add some posts to your profile!</h4>
+			<a class="newPostsLink" href="/<%= @user.username %>/newpost"><h3>New Post</h3></a>
+		<% else %>
+			<a class="newPostsLink" href="/<%= @user.username %>/newpost"><h3>New Post</h3></a><br />
+			<% @user.posts.each do |post| %>
+				<a href="/posts/<%= post.id %>">
+				<div class="postPreview">
+					<%= post.title %><br />
+					<%= image_tag post.image %><br />
+				</div></a>
+				<%= link_to 'Edit', edit_post_path(post) %> | 
+				<%= link_to 'Delete', post, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
+			<% end %>
+		<% end %>
+	<% elsif @user.posts.nil? || @user.posts == [] %>
+		<h4>This user doesn't have any posts yet.</h4>
+	<% else %>
+		<% @user.posts.each do |post| %>
+			<a href="/posts/<%= post.id %>">
+				<div class="postPreview">
+					<%= post.title %><br />
+					<%= image_tag post.image %><br />
+				</div></a>
+		<% end %>
+	<% end %>
+</div>

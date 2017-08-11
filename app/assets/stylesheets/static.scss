@@ -1,3 +1,61 @@
-// Place all the styles related to the static controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// start of profile page:
+#profileDiv {
+	text-align: center;
+	margin: 0 auto;
+
+	span.propicImg img {
+		height: 10vh;
+	}
+
+	#userRenderDiv {
+		margin-right: 10vw;
+
+		span.profile_panel {
+			display: none;
+		}
+
+		span.profile_panel.active {
+			display: block;
+		}
+
+		#userArticleDiv {
+			margin: 0 auto;
+			margin-right: 10vw;
+
+			span.articleDiv {
+				width: 30vw;
+				display: inline-block;
+			}
+
+			span.articleImg img {
+				width: 30vw;
+				// height: 40vh;
+			}
+		}
+
+		#userExperimentDiv {
+			margin: 0 auto;
+
+			div.experimentPreview {
+				width: 25vw;
+				display: inline-block;
+
+				img {
+					height: 20vh;
+				}
+			}
+		}
+
+		#userPostDiv {
+			text-align: center;
+			margin: 0 auto;
+
+			div.postPreview {
+				img {
+					height: 20vh;
+				}
+			}
+		}
+	}
+}
+// end of profile page

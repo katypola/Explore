@@ -1,0 +1,15 @@
+<div id="userExperimentDiv">
+<h2>Saved Experiments</h2>
+<% if @user.experiments %>
+	<% @user.experiments.each do |experiment| %>
+		<div class="experimentPreview">
+			<a href="/experiments/<%= experiment.id %>">
+			<h4><%= experiment.title %></h4></a><br />
+			<a href="/fields/<%= experiment.field.id %>"><%= experiment.field.name %></a><br />
+			<a href="/experiments/<%= experiment.id %>"><%= image_tag experiment.image %></a><br /><br />
+		</div>
+	<% end %>
+<% else %>
+	<p>No experiments yet...</p>
+<% end %>
+</div>

@@ -1,5 +1,5 @@
-<div id="userArticlePage">
-	<h1>My Articles</h1>
+<div id="userArticleDiv">
+	<h2>Saved Articles</h2>
 
 	<% if user_signed_in? && current_user == @user %>
 		<% if (@user.articles.nil? or @user.articles == []) %>
@@ -8,9 +8,9 @@
 			<% @user.articles.each do |article| %>
 				<span class ="articleDiv">
 					<a class="articlePreview" href="<%= article.alink %>">
-						<%= image_tag article.picture %><br />
-						<%= article.name %></a><br />
-					<%= button_to 'Remove Article', article_remove_path(article) %>
+						<span class="articleImg"><%= image_tag article["picture"] %></span><br />
+						<%= article["name"] %></a><br />
+					<%= button_remove_article(article) %><br />
 				</span>
 			<% end %>
 		<% end %>
@@ -22,8 +22,8 @@
 			<% @user.articles.each do |article| %>
 				<span class ="articleDiv">
 					<a class="articlePreview" href="<%= article.alink %>">
-						<%= image_tag article.picture %><br />
-						<%= article.name %></a><br />
+						<span class="articleImg"><%= image_tag article["picture"] %></span><br />
+						<%= article["name"] %></a><br />
 				</span>
 			<% end %>
 		<% end %>

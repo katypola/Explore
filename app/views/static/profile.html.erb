@@ -1,11 +1,31 @@
-<%= @user.full_name %><br />
+<div id="profileDiv">
+<h2><%= @user.full_name %></h2><br />
+<p><strong>Username:</strong></p>
+<i><%= @user.username %></i><br />
+<span class="propicImg"><%= image_tag @user.propic %></span><br />
+<p><strong>Location:</strong></p>
+<%= @user.location["name"] %><br />
 
-<% if @user.experiments %>
-	<% @user.experiments.each do |experiment| %>
-		<a href="/experiments/<%= experiment.id %>"><%= experiment.title %></a><br />
-	<% end %>
-<% else %>
-	<p>No experiments yet...</p>
-<% end %>
+<!-- fixed div to navigate profile page -->
+	<div id="userNavDiv" class="col-md-2">
+		<a class="savedArticlesLink" href="/<%= @user.username %>/article"><h3>Saved Articles</h3></a><br />
+		<a class="savedExperimentsLink" href="/<%= @user.username %>/experiment"><h3>Saved Experiments</h3></a><br />
+		<a class="userPostsLink" href="/<%= @user.username %>/post"><h3>Posts</h3></a>
+	</div>
 
-<%= render 'userarticles', static: @static %>
+	<!-- div where pages render for a user's saved articles, experiments, and posts; renders the articles first, when page loads -->
+	<div id="userRenderDiv" class="col-md-offset-3 col-md-9">
+		<span class="profile_panel hideArticles<%= " active" unless params[:page] == "experiment" || params[:page] == "post" || params[:page] == "newpost" || params[:page] == "edit" %>"><%= render 'userarticles', static: @static %></span>
+		<span class="profile_panel hideExperiments<%= " active" if params[:page] == "experiment" %>"><%= render 'userexperiments', static: @static %></span>
+		<span class="profile_panel hidePosts<%= " active" if params[:page] == "post" %>"><%= render 'userposts', static: @static %></span>
+		<span class="profile_panel hideNewPost<%= " active" if params[:page] == "newpost" %>">
+			<h1>New Post</h1><br />
+			<%= render 'posts/form', post: Post.new %>
+		</span>
+		<span class="profile_panel hideEditPost<%= " active" if params[:page] == "edit" %>">
+			<h1>Edit Post</h1><br />
+			<%= render 'posts/form', post: @post, method: :update %>
+		</span>
+
+	</div>
+</div>

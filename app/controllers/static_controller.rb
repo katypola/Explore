@@ -9,5 +9,9 @@ class StaticController < ApplicationController
   	def profile
     	# @user = User.find_by_username(params[:username])
     	@user = User.find_by_username(params[:username])
+
+  
+      @post = params[:post_id] ? Post.find(params[:post_id]) : Post.new
+
   	end
 end
