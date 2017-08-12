@@ -1,0 +1,19 @@
+<div id="experimentPostDiv">
+	<h2>Posts</h2>
+		<% if user_signed_in? %>
+			<a class="newPostLink" href="/experiments/<%= @experiment.id %>/new"><h3>New Post</h3></a>
+		<% end %>
+		<% @posts.each do |post| %>
+			<% if @experiment == post.experiment %>
+				<div class="postPreview">
+					<a href="/posts/<%= post.id %>">
+						<%= image_tag post.image %><br />
+						<%= post.title %>
+					</a><br />
+					<a href="/<%= post.user.username %>"><%= post.user.username %></a><br />
+				</div>
+			<% elsif post.experiment.nil? %>
+				<p>This experiment doesn't have any posts yet.</p>
+			<% end %>
+		<% end %>
+</div>

@@ -3,18 +3,19 @@
 	text-align: center;
 
 	.experimentImageSpan img {
-		width: 30vw;
+		// width: 30vw;
+		height: 40vh;
 	}
 
-	.hideSteps {
+	.experiment_panel {
 		display: none;
 	}
 
-	.kitLink, .stepLink, .hideSteps.active, .hideKit.active {
+	.kitLink, .stepLink, .expPostLink, .experiment_panel.active {
 		display: block;
 	}
 
-	.stepLink.inactive {
+	.stepLink.inactive, .expPostLink.inactive {
 		display: none;
 	}
 
@@ -37,6 +38,21 @@
     	img {
     		width: 25vw;
     	}
+	}
+
+	#experimentPostDiv {
+		text-align: center;
+		width: 90vw;
+		margin: 0 auto;
+		display: inline-block;
+
+		.postPreview {
+			display: inline-block;
+
+			img {
+				height: 25vh;
+			}
+		}	
 	}
 }
 // end of experiment show page

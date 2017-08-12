@@ -16,6 +16,8 @@ class ExperimentsController < ApplicationController
     # @kits = @experiment.kits
 
     @item = Item.find_by(params[:id])
+    @posts = Post.all
+    @post = params[:post_id] ? Post.find(params[:post_id]) : Post.new
   end
 
   # Add experiments to userexperiments

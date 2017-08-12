@@ -1,8 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <div id="experimentShowDiv">
 
   <h2><%= @experiment.title %></h2>
+  <% if user_signed_in? && current_user.admin? %>
+    <%= link_to 'Edit', edit_experiment_path(@experiment) %>
+  <% end %><br />
 
   <span class="experimentImageSpan"><%= image_tag @experiment.image %></span><br />
 
@@ -19,17 +20,11 @@
   <%= button_to 'Save Experiment', experiment_add_path(@experiment) %>
 <% end %><br />
 
-<% if user_signed_in? && current_user.admin? %>
-  <%= link_to 'Edit', edit_experiment_path(@experiment) %> |
-  <%= link_to 'Back', experiments_path %>
-<% end %>
-<br /><br />
-
 <% if @experiment.kits %>
 	<% @experiment.kits.each do |kit| %>
-		<a class="kitLink" href="<%= exper_path(@experiment,"kit") %>">See Kit</a>
+		<a class="kitLink" href="<%= exper_path(@experiment,"kit") %>">Kit</a>
     <!-- <div id="kitModal"> -->
-		  <span id ="kitModal" class="hideKit<%= " active" if params[:pg] == "kit" %>"><%= render file: 'kits/show', locals: {kit: kit} %><br />
+		  <span id ="kitModal" class="experiment_panel hideKit<%= " active" if params[:pg] == "kit" %>"><%= render file: 'kits/show', locals: {kit: kit} %><br />
         <button type="button" name="button" onclick="closeModal()">Close</button></span>
     <!-- </div> -->
 	<% end %>
@@ -38,8 +33,17 @@
 <% end %>
 
 <br />
-<a class="stepLink<%= " inactive" if params[:pg] == "steps" %>" href="/experiments/<%= @experiment.id %>/steps">See Steps</a>
-<span class="hideSteps<%= " active" if params[:pg] == "steps" %>"><%= render 'steps', exper: @experiment %></span>
+<a class="stepLink<%= " inactive" if params[:pg] == "steps" %>" href="/experiments/<%= @experiment.id %>/steps">Steps</a><br />
+<a class="expPostLink<%= " inactive" if params[:pg] == "posts" %>" href="/experiments/<%= @experiment.id %>/posts">Posts About This Experiment</a>
+<span class="experiment_panel hideSteps<%= " active" if params[:pg] == "steps" %>"><%= render 'steps', exper: @experiment %></span>
 <br />
+<span class="experiment_panel hideExpPosts<%= " active" if params[:pg] == "posts" %>"><%= render 'posts', exper: @experiment %></span>
+<br />
+<span class="experiment_panel hideNewPostLink<%= " active" if params[:pg] == "new" %>">
+  <h1>New Post</h1><br />
+  <%= render 'posts/form', exper: @experiment, method: :new %>
+</span><br />
+
+  <%= link_to 'See All Experiments', experiments_path %>
 
 </div>

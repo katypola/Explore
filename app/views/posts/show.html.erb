@@ -5,9 +5,12 @@
     <%= image_tag @post.image %><br />
     <%= @post.body %><br />
 
-    <% if @user == current_user %>
-      <%= link_to 'Edit', edit_post_path(@post) %> | 
-      <%= link_to 'Go To My Posts', profile_path(@post.user.username,:post) %> | 
-      <%= link_to 'Go To Post Feed', posts_path %>
-    <% end %>
+    <% if @post.user == current_user %>
+      <a class="editPostsLink" href="/<%= @user.username %>/edit/<%= @post.id %>">Edit</a> | 
+      <%= link_to 'Delete', @post, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
+      <%# link_to 'Edit', edit_post_path(@post) %> | 
+      <%= link_to 'Go To My Posts', profile_path(@post.user.username,:post) %>
+    <% end %><br />
+
+    <%= link_to 'Go To Post Feed', posts_path %>
 </div>

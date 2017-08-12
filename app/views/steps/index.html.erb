@@ -4,9 +4,11 @@
       <%= step.number %><br />
       <%= step.body %><br />
       <%= image_tag step.image %><br />
-      <%= link_to 'Show', step %>
-      <%= link_to 'Edit', edit_step_path(step) %>
-      <%= link_to 'Destroy', step, method: :delete, data: { confirm: 'Are you sure?' } %><br />
+      <% if user_signed_in? && current_user.admin? %>
+        <%= link_to 'Show', step %>
+        <%= link_to 'Edit', edit_step_path(step) %>
+        <%= link_to 'Destroy', step, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %><br />
     <% end %>
   <% end %>
 <br>

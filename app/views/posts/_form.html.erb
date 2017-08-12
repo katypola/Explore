@@ -1,13 +1,16 @@
-<%= simple_form_for(post) do |f| %>
+<%= simple_form_for(@post) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :body %>
     <%= f.input :image %>
-    <%= f.association :user %>
-    <%= f.association :experiment %>
-  </div>
+    <% if ((defined?(exper)).nil? == false) && exper.id %>
+      <%= f.input :experiment_id, as: :hidden, input_html: { value: exper.id } %>
+    <% else %>
+      <%= f.association :experiment, input_html: {id: 'post.experiment_id', value: @post.experiment_id} %>
+    <% end %>
+  </div>  
 
   <div class="form-actions">
     <%= f.button :submit %>

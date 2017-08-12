@@ -7,7 +7,7 @@
       <a href="/posts/<%= post.id %>"><%= image_tag post.image %></a><br />
         <% if current_user.admin? %>
           <%# link_to 'Edit', edit_post_path(post) %>
-          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% else %>
         <% end %>
     </div>

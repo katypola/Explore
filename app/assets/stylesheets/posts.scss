@@ -1,7 +1,17 @@
+// start of post form:
+// span.hideFormField {
+// 	display: none;
+// }
+// end of post form
+
 // start of post show page:
 #postShowDiv {
 	text-align: center;
 	margin: 0 auto;
+
+	img {
+		height: 40vh;
+	}
 }
 // end of post show page
 
