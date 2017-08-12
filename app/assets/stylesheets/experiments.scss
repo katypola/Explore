@@ -60,10 +60,17 @@
 // start of experiment index:
 #experimentIndex {
 	text-align: center;
+	width: 90vw;
 	margin: 0 auto;
+	display: inline-block;
 
-	img {
-		width: 30vw;
-	}
+	.experimentPreview {
+		padding: 2%;
+		display: inline-block;
+
+		img {
+			height: 25vh;
+		}
+	}	
 }
 // end of experiment index

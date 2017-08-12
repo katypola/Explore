@@ -4,7 +4,9 @@
 	<% if user_signed_in? && current_user == @user %>
 		<% if (@user.articles.nil? or @user.articles == []) %>
 			<h3>Save some articles to your profile!</h3>
+			<a class="articleAdd" href="/">Add Articles</a>
 		<% else %>
+			<a class="articleAdd" href="/">Add Articles</a><br />
 			<% @user.articles.each do |article| %>
 				<span class ="articleDiv">
 					<a class="articlePreview" href="<%= article.alink %>">

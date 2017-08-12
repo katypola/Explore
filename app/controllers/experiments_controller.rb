@@ -33,7 +33,7 @@ class ExperimentsController < ApplicationController
    else
      @user.experiments << @experiment
    end
-   redirect_to profile_path(@user.username,:experiment)
+   redirect_back(fallback_location: profile_path(@user.username,:experiment))
   end
 
   def remove
@@ -66,7 +66,7 @@ class ExperimentsController < ApplicationController
 
     respond_to do |format|
       if @experiment.save
-        format.html { redirect_to @experiment, notice: 'Experiment was successfully created.' }
+        format.html { redirect_to @experiment }
         format.json { render :show, status: :created, location: @experiment }
       else
         format.html { render :new }
@@ -80,7 +80,7 @@ class ExperimentsController < ApplicationController
   def update
     respond_to do |format|
       if @experiment.update(experiment_params)
-        format.html { redirect_to @experiment, notice: 'Experiment was successfully updated.' }
+        format.html { redirect_to @experiment }
         format.json { render :show, status: :ok, location: @experiment }
       else
         format.html { render :edit }
@@ -94,7 +94,7 @@ class ExperimentsController < ApplicationController
   def destroy
     @experiment.destroy
     respond_to do |format|
-      format.html { redirect_to experiments_url, notice: 'Experiment was successfully destroyed.' }
+      format.html { redirect_to experiments_url }
       format.json { head :no_content }
     end
   end

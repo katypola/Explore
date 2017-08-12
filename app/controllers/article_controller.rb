@@ -26,7 +26,7 @@ class ArticleController < ApplicationController
     respond_to do |format|
       format.js 
     end
-    redirect_to profile_path(@user.username)
+    redirect_back(fallback_location: profile_path(@user.username))
   end
 
 end

@@ -9,11 +9,11 @@
 			<% @user.posts.each do |post| %>
 				<div class="postPreview">
 					<a href="/posts/<%= post.id %>">
-						<%= post.title %><br />
-						<%= image_tag post.image %></a><br />
+						<%= image_tag post.image %><br />
+						<%= post.title %></a><br />
 					<a class="editPostsLink" href="/<%= @user.username %>/edit/<%= post.id %>">Edit</a> | 
 					<%= link_to 'Delete', post, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
-				</div><br />
+				</div>
 			<% end %>
 		<% end %>
 	<% elsif @user.posts.nil? || @user.posts == [] %>
@@ -22,9 +22,8 @@
 		<% @user.posts.each do |post| %>
 			<div class="postPreview">
 				<a href="/posts/<%= post.id %>">
-					<%= post.title %><br />
 					<%= image_tag post.image %><br />
-				</a>
+					<%= post.title %></a>
 			</div>
 		<% end %>
 	<% end %>

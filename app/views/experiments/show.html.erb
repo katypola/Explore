@@ -2,23 +2,19 @@
 
   <h2><%= @experiment.title %></h2>
   <% if user_signed_in? && current_user.admin? %>
-    <%= link_to 'Edit', edit_experiment_path(@experiment) %>
+    <%= link_to 'Edit', edit_experiment_path(@experiment) %> | 
+    <%= link_to 'Delete', @experiment, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %><br />
-
-  <span class="experimentImageSpan"><%= image_tag @experiment.image %></span><br />
-
-  <%= @experiment.overview %>
-
-<p>
-  <strong>Field:</strong>
-  <a href="/fields/<%= @experiment.field.id %>"><%= @experiment.field.name %></a>
-</p>
-
-<% if UserExperiment.find_by(experiment_id: @experiment.id, user_id: current_user.id) %>
-  <%= button_to 'Unsave Experiment', experiment_remove_path(@experiment) %>
-<% else %>
-  <%= button_to 'Save Experiment', experiment_add_path(@experiment) %>
-<% end %><br />
+    <p class="fieldName"><strong>Field:</strong>
+    <a href="/fields/<%= @experiment.field.id %>"><%= @experiment.field.name %></a></p>
+    <% if user_signed_in? && UserExperiment.find_by(experiment_id: @experiment.id, user_id: current_user.id) %>
+      <%= button_to 'Unsave Experiment', experiment_remove_path(@experiment) %>
+    <% else %>
+      <%= button_to 'Save Experiment', experiment_add_path(@experiment) %>
+    <% end %><br />
+    <span class="experimentImageSpan"><%= image_tag @experiment.image %></span><br />
+    <%= @experiment.overview %>
+    <a class="stepLink<%= " inactive" if params[:pg] == "steps" %>" href="/experiments/<%= @experiment.id %>/steps">Steps</a>
 
 <% if @experiment.kits %>
 	<% @experiment.kits.each do |kit| %>
@@ -32,8 +28,6 @@
 	<p>This experiment doesn't have a kit.</p>
 <% end %>
 
-<br />
-<a class="stepLink<%= " inactive" if params[:pg] == "steps" %>" href="/experiments/<%= @experiment.id %>/steps">Steps</a><br />
 <a class="expPostLink<%= " inactive" if params[:pg] == "posts" %>" href="/experiments/<%= @experiment.id %>/posts">Posts About This Experiment</a>
 <span class="experiment_panel hideSteps<%= " active" if params[:pg] == "steps" %>"><%= render 'steps', exper: @experiment %></span>
 <br />

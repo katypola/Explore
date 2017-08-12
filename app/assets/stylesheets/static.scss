@@ -19,9 +19,6 @@
 		}
 
 		#userArticleDiv {
-			margin: 0 auto;
-			margin-right: 10vw;
-
 			span.articleDiv {
 				width: 30vw;
 				display: inline-block;
@@ -29,13 +26,10 @@
 
 			span.articleImg img {
 				width: 30vw;
-				// height: 40vh;
 			}
 		}
 
 		#userExperimentDiv {
-			margin: 0 auto;
-
 			div.experimentPreview {
 				width: 25vw;
 				display: inline-block;
@@ -47,9 +41,6 @@
 		}
 
 		#userPostDiv {
-			text-align: center;
-			margin: 0 auto;
-
 			div.postPreview {
 				width: 25vw;
 				display: inline-block;

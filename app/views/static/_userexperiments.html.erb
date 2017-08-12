@@ -8,18 +8,18 @@
 	<% @user.experiments.each do |experiment| %>
 		<div class="experimentPreview">
 			<a href="/experiments/<%= experiment.id %>">
-			<h4><%= experiment.title %></h4></a><br />
-			<a href="/fields/<%= experiment.field.id %>"><%= experiment.field.name %></a><br />
-			<a href="/experiments/<%= experiment.id %>"><%= image_tag experiment.image %></a><br /><br />
+			<h4><%= experiment.title %></h4><br />
+			<%= image_tag experiment.image %></a><br />
+			<a href="/fields/<%= experiment.field.id %>"><%= experiment.field.name %></a><br /><br />
 		</div>
 	<% end %>
 <% else %>
 	<% @user.experiments.each do |experiment| %>
 		<div class="experimentPreview">
 			<a href="/experiments/<%= experiment.id %>">
-			<h4><%= experiment.title %></h4></a><br />
-			<a href="/fields/<%= experiment.field.id %>"><%= experiment.field.name %></a><br />
-			<a href="/experiments/<%= experiment.id %>"><%= image_tag experiment.image %></a>
+			<h4><%= experiment.title %></h4><br />
+			<%= image_tag experiment.image %></a><br />
+			<a href="/fields/<%= experiment.field.id %>"><%= experiment.field.name %></a>
 			<%= button_to 'Unsave Experiment', experiment_remove_path(experiment) %>
 			<br /><br />
 		</div>

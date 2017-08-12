@@ -5,7 +5,7 @@
 		<a href="<%= article.alink %>">Read full article</a><br />
 		<img class="newsImage" src="<%= article.picture %>" />
 		<p><%= article.date %></p>
-		<p><%= article.overview.to_json.html_safe %></p><br />
+		<p><%= article.overview.html_safe %></p><br />
 		<% if user_signed_in? %>
 		<div id="article_button_<%= article.id %>"class="article_button">
 			<% if article.favorited? current_user %>

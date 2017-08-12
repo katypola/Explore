@@ -10,7 +10,7 @@
 						<%= image_tag post.image %><br />
 						<%= post.title %>
 					</a><br />
-					<a href="/<%= post.user.username %>"><%= post.user.username %></a><br />
+					<a href="/<%= post.user.username %>/post"><%= post.user.username %></a><br />
 				</div>
 			<% elsif post.experiment.nil? %>
 				<p>This experiment doesn't have any posts yet.</p>
