@@ -20,41 +20,40 @@
 
   <body>
 
-    <div id="codepen">
-      <nav id="nav" class="nav">
-  <button class="menu">
-    <em class="hamburger"></em>
-  </button>
-  <div class="brand">
-    <a href="#">MadSciExplorer</a>
+  <div id="stickyNav">
+    <nav id="nav" class="nav">
+      <div class="brand">
+        <a href="/">MadSciExplorer</a>
+      </div>
+      <ul class="navbar">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <% if user_signed_in? %>
+        <li>
+          <a href="/<%= current_user.username %>">Profile</a>
+        </li>
+        <% end %>
+        <li>
+          <a href="/fields">Scientific Fields</a>
+        </li>
+        <li>
+          <a href="/experiments">Experiments</a>
+        </li>
+        <li>
+          <a href="/posts">Posts</a>
+        </li>
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        </li>
+        <% else %>
+          <li onclick="signInModalShow()" class="navToModal">Sign In/Sign Up</li>
+        <% end %>
+      </ul>
+    </nav>
   </div>
-  <ul class="navbar">
-    <li>
-      <a href="/">Home</a>
-    </li>
-    <% if user_signed_in? %>
-    <li>
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-    </li>
-    <% else %>
-      <span onclick="signInModalShow()" class="navToModal">Sign In/Sign Up</span>
-    <% end %>
-    <li>
-      <a href="#services">Services</a>
-    </li>
-    <li>
-      <a href="#contact">Contact</a>
-    </li>
-  </ul>
-</nav>
-</div>
-    <!-- <a class="homeLink" href="/">Home</a><br />
-    <%# if user_signed_in? %>
-      <%# link_to "Sign Out", destroy_user_session_path, method: :delete %>
-    <%# else %>
-      <span onclick="signInModalShow()" class="navToModal">Sign In/Sign Up</span>
-    <%# end %> -->
-    <!-- sign in/sign up modal: -->
+  <!-- sign in/sign up modal: -->
     <div id="signInModal">
       <%= render file: "devise/sessions/new" %>
       <%= render file: "devise/registrations/new" %>

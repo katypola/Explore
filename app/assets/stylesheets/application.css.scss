@@ -14,6 +14,15 @@
  *= require_self
  */
 
+ // general formatting:
+html, body {
+	height: 100vh;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+ // end of general formatting
+
 // start of all forms:
 form {
 	input[type=file] {
