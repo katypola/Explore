@@ -10,6 +10,7 @@ class FieldsController < ApplicationController
   # GET /fields/1
   # GET /fields/1.json
   def show
+    @field = Field.find(params[:id])
   end
 
   # GET /fields/new
@@ -19,6 +20,9 @@ class FieldsController < ApplicationController
 
   # GET /fields/1/edit
   def edit
+  end
+
+  def astronomy
   end
 
   # # GET /fields/tiltscroll

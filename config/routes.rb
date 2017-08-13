@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/apod/main' => 'apod#main'
   get '/articles' => 'article#index'
   get '/search' => 'search#index'
-  # get '/field/tiltscroll' => 'fields#tiltscroll'
+  get '/fields/:id/astronomy' => 'fields#astronomy'
   get '/experiments/:id(/:pg)' => 'experiments#show', as: :exper
   post '/article/add' => 'article#add', as: :article_add
   post '/article/:id/remove' => 'article#remove', as: :article_remove
