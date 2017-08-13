@@ -1,15 +1,17 @@
+<div id="userSignup">
+
 <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-  	<%= f.input :fname, required: true, autofocus: true %>
-  	<%= f.input :lname, required: true, autofocus: true %>
+  	<%= f.input :fname, :label => "First Name", required: true, autofocus: true %>
+  	<%= f.input :lname, :label => "Last Name", required: true, autofocus: true %>
   	<%= f.input :username, required: true, autofocus: true %>
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.association :location, required: true, autofocus: true %>
-    <%= f.input :propic, required: true, autofocus: true %>
+    <%= f.input :propic, :label => "Upload Profile Picture", required: true, autofocus: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
   </div>
@@ -19,4 +21,11 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<span id="signInLink" onclick="signInFormShow()">I already have an account</span><br />
+
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "I Forgot My Password", new_password_path(resource_name) %>
+<% end -%><br />
+<%# render "devise/shared/links" %>
+
+</div>

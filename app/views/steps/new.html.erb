@@ -1,6 +1,10 @@
+<% if user_signed_in? && current_user.admin? %>
+
 <h1>New Step</h1>
 
 <%= render 'form', step: @step %>
 
 <%= link_to 'Back To All Experiments', experiments_path %><br />
 <%= link_to 'Back To All Steps', steps_path %>
+
+<% end %>

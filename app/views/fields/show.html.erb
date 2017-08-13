@@ -15,7 +15,8 @@
 </p>
 
 <br /><br />
-
-<%= link_to 'Edit', edit_field_path(@field) %> |
-<%= link_to 'Back', fields_path %>
+<% if user_signed_in? && current_user.admin? %>
+	<%= link_to 'Edit', edit_field_path(@field) %><br />
+<% end %>
+<%= link_to 'See All Fields', fields_path %>
 </div>

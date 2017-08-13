@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Science</title>
+    <title>MadSciExplorer</title>
     <%= csrf_meta_tags %>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $(".main").tiltedpage_scroll({
+        angle: 30
+      });
+    });
+    </script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <% if user_signed_in? %>
-    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%# render file: "devise/sessions/new" %>
-  <% end %>
-   <!-- <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p> -->
+    <a class="homeLink" href="/">Home</a><br />
+    <% if user_signed_in? %>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <span onclick="signInModalShow()" class="navToModal">Sign In/Sign Up</span>
+    <% end %>
+    <!-- sign in/sign up modal: -->
+    <div id="signInModal">
+      <%= render file: "devise/sessions/new" %>
+      <%= render file: "devise/registrations/new" %>
+      <br>
+      <button type="button" name="button" id="modalClose" onclick="closeSigninModal()">Close</button><br /><br />
+    </div>
     <%= yield %>
   </body>
 </html>

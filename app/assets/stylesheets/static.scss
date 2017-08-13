@@ -3,12 +3,18 @@
 	text-align: center;
 	margin: 0 auto;
 
-	span.propicImg img {
-		height: 10vh;
+	#userNavDiv {
+
+		#userInfo {
+			span.propicImg img {
+			height: 10vh;
+		}
 	}
+}
 
 	#userRenderDiv {
-		margin-right: 10vw;
+		margin-right: 0;
+		margin-left: 0;
 
 		span.profile_panel {
 			display: none;

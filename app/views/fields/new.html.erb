@@ -1,5 +1,9 @@
+<% if user_signed_in? && current_user.admin? %>
+
 <h1>New Field</h1>
 
 <%= render 'form', field: @field %>
 
-<%= link_to 'Back', fields_path %>
+<%= link_to 'All Fields', fields_path %>
+
+<% end %>

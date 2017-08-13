@@ -1,6 +1,10 @@
+<% if user_signed_in? && current_user.admin? %>
+
 <h1>Editing Step</h1>
 
 <%= render 'form', step: @step %>
 
-<%= link_to 'Show', @step %> |
+<%= link_to 'See Step', @step %> |
 <%= link_to 'Back', steps_path %>
+
+<% end %>

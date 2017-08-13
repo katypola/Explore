@@ -1,6 +1,10 @@
+<% if user_signed_in? && current_user.admin? %>
+
 <h1>Editing Field</h1>
 
 <%= render 'form', field: @field %>
 
-<%= link_to 'Show', @field %> |
-<%= link_to 'Back', fields_path %>
+<%= link_to 'See Field', @field %> |
+<%= link_to 'See All Fields', fields_path %>
+
+<% end %>

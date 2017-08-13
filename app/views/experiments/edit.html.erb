@@ -1,6 +1,10 @@
+<% if user_signed_in? && current_user.admin? %>
+
 <h1>Editing Experiment</h1>
 
 <%= render 'form', experiment: @experiment %>
 
-<%= link_to 'Show', @experiment %> |
-<%= link_to 'Back', experiments_path %>
+<%= link_to 'See Experiment', @experiment %> |
+<%= link_to 'See All Experiments', experiments_path %>
+
+<% end %>

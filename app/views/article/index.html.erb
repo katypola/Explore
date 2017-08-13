@@ -7,15 +7,13 @@
 		<p><%= article.date %></p>
 		<p><%= article.overview.html_safe %></p><br />
 		<% if user_signed_in? %>
-		<div id="article_button_<%= article.id %>"class="article_button">
-			<% if article.favorited? current_user %>
-         <%= button_remove_article article %>
-      <% else %>
-         <%= button_add_article article %>
-      <% end %>
-     </div>
-     <% else %>
-        <p>Sign in and save articles</p>
+			<div id="article_button_<%= article.id %>" class="article_button">
+				<% if article.favorited? current_user %>
+        			<%= button_remove_article article %>
+      			<% else %>
+        			<%= button_add_article article %>
+      			<% end %>
+     		</div>
 		<% end %>
 	<% end %>
 	

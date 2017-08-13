@@ -1,20 +1,21 @@
 <div id="profileDiv">
-<h2><%= @user.full_name %></h2><br />
-<p><strong>Username:</strong></p>
-<i><%= @user.username %></i><br />
-<span class="propicImg"><%= image_tag @user.propic %></span><br />
-<p><strong>Location:</strong></p>
-<%= @user.location["name"] %><br />
-
-<!-- fixed div to navigate profile page -->
+<!-- fixed div w/ user info to navigate profile page -->
 	<div id="userNavDiv" class="col-md-2">
-		<a class="savedArticlesLink" href="/<%= @user.username %>/article"><h3>Saved Articles</h3></a><br />
-		<a class="savedExperimentsLink" href="/<%= @user.username %>/experiment"><h3>Saved Experiments</h3></a><br />
-		<a class="userPostsLink" href="/<%= @user.username %>/post"><h3>Posts</h3></a>
+		<div id="userInfo">
+			<h2><%= @user.full_name %></h2><br />
+			<p><strong>Username:</strong></p>
+			<i><%= @user.username %></i><br />
+			<span class="propicImg"><%= image_tag @user.propic %></span><br />
+			<p><strong>Location:</strong></p>
+			<%= @user.location["name"] %><br />
+		</div>
+		<a class="savedArticlesLink" href="/<%= @user.username %>/article"><h4>Saved Articles</h4></a><br />
+		<a class="savedExperimentsLink" href="/<%= @user.username %>/experiment"><h4>Saved Experiments</h4></a><br />
+		<a class="userPostsLink" href="/<%= @user.username %>/post"><h4>Posts</h4></a>
 	</div>
 
 	<!-- div where pages render for a user's saved articles, experiments, and posts; renders the articles first, when page loads -->
-	<div id="userRenderDiv" class="col-md-offset-3 col-md-9">
+	<div id="userRenderDiv" class="col-md-offset-2 col-md-10">
 		<span class="profile_panel hideArticles<%= " active" unless params[:page] == "experiment" || params[:page] == "post" || params[:page] == "new" || params[:page] == "edit" %>"><%= render 'userarticles' %></span>
 		<span class="profile_panel hideExperiments<%= " active" if params[:page] == "experiment" %>"><%= render 'userexperiments' %></span>
 		<span class="profile_panel hidePosts<%= " active" if params[:page] == "post" %>"><%= render 'userposts', post: @post %></span>

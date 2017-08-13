@@ -21,6 +21,10 @@ class FieldsController < ApplicationController
   def edit
   end
 
+  # # GET /fields/tiltscroll
+  # def tiltscroll
+  # end
+
   # POST /fields
   # POST /fields.json
   def create

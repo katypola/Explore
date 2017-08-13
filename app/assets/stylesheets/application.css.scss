@@ -14,6 +14,121 @@
  *= require_self
  */
 
+// start of all forms:
+form {
+	input[type=file] {
+		display: inline-block; // to make it centered
+	}
+
+	input#post_title {
+		width: 40vw;
+		overflow-x: scroll;
+		display: inline-block;
+	}
+
+	textarea#post_body {
+		width: 40vw;
+		height: 10vh;
+		overflow-y: scroll;
+		display: inline-block;
+	}
+
+	input#kit_name {
+		width: 40vw;
+		overflow-x: scroll;
+		display: inline-block;
+	}
+
+	.select {
+		width: 30vw;
+		display: inline-block;
+	}
+}
+// end of all forms
+
+// start of sign in/sign up modal:
+span.navToModal {
+    	cursor: pointer;
+    }
+
+div#signInModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 300; /* Sit on top */
+    padding-top: 0.2vh;
+    padding-bottom: 0.1vh;
+    width: 30vw;
+    text-align: center;
+    font-size: 1vw;
+    background-color: rgba(255, 255, 255, .8);
+    margin-left: 35vw;
+    margin-bottom: 0.1vh;
+    overflow-y: scroll;
+    border: 0.2vw solid rgba(102, 102, 102, 0.7);
+    border-radius: 70px;
+
+    button#modalClose {
+    	text-align: center;
+    	margin: 0 auto;
+    }
+
+    span#signUpLink, span#signInLink {
+     	cursor: pointer;
+    }
+
+    // #signUpForm {
+    //   margin: 0 auto;
+    //   height: 60vh;
+    //   overflow-y: scroll;
+    // }
+}
+// end of sign in/sign up modal
+
+// start of sessions/new (sign in) form:
+#signinDiv {
+	text-align: center;
+	margin: 0 auto;
+
+	input.string, input.password {
+		width: 20vw;
+		overflow-x: scroll;
+		display: inline-block;
+	}
+}
+// end of sessions/new (sign in) form
+
+// start of user registration/new (sign up) form:
+#userSignup {
+	text-align: center;
+	margin: 0 auto;
+
+	form {
+
+		input.string, select#user_location_id.select, input.password {
+			width: 20vw;
+			overflow-x: scroll;
+			display: inline-block;
+		}
+	}
+}
+// end of user registration/new (sign up) form
+
+// start of user registration/edit form:
+#editUser {
+	text-align: center;
+	margin: 0 auto;
+
+	form {
+
+		input.string, select#user_location_id.select, input.password {
+			width: 20vw;
+			overflow-x: scroll;
+			display: inline-block;
+		}
+	}
+}
+// end of user registration/edit form
+
 // start of home div:
 #homeDiv {
 	text-align: center;

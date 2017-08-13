@@ -14,7 +14,28 @@
 //= require turbolinks
 //= require_tree .
 
+// making sign in modal show and close
+function signInModalShow(){
+  document.getElementById('signInModal').style.display = "block";
+  document.getElementById('signinDiv').style.display = "block";
+  document.getElementById('userSignup').style.display = "none";
+}
+// making sign up form render from sign in form in modal
+function signUpFormShow(){
+  document.getElementById('signinDiv').style.display = "none";
+  document.getElementById('userSignup').style.display = "block";
+}
+// making sign in form render from sign up form in modal
+function signInFormShow(){
+  document.getElementById('signinDiv').style.display = "block";
+  document.getElementById('userSignup').style.display = "none";
+}
 // making modal close when you click "close" button
+function closeSigninModal() {
+  document.getElementById('signInModal').style.display = "none";
+}
+
 function closeModal() {
   document.getElementById('kitModal').style.display = "none";
+  document.getElementById('signInModal').style.display = "none";
 }

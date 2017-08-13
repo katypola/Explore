@@ -22,15 +22,15 @@
 	.hideKit {
     	display: none; /* Hidden by default */
     	position: fixed; /* Stay in place */
-    	z-index: 300; /* Sit on top */
+    	z-index: 3; /* Sit on top */
     	padding-top: 2vh;
     	padding-bottom: 2vh;
     	width: 35vw;
     	text-align: center;
-    	font-size: 20px;
-    	background-color: rgba(255, 255, 255, .7);
+    	font-size: 1.2vw;
+    	background-color: rgba(255, 255, 255, .8);
     	margin-left: 32.5vw;
-    	margin-top: -70vh;
+    	margin-top: -60vh;
     	// overflow-y: scroll;
     	border: 2px solid rgba(102, 102, 102, 0.7);
     	border-radius: 70px;

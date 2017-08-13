@@ -1,14 +1,1 @@
-<p id="notice"><%= notice %></p>
-<div id="fieldIndexDiv">
-<h1>Fields</h1>
-  <% @fields.each do |field| %>
-    <a href="/fields/<%= field.id %>">
-    <h3><%= field.name %></h3>
-    <%= field.overview %><br />
-    <span class="fieldImageSpan"><%= image_tag field.image.url %></span></a><br />
-    <%= link_to 'Edit', edit_field_path(field) %>
-    <%= link_to 'Destroy', field, method: :delete, data: { confirm: 'Are you sure?' } %><br /><br />
-  <% end %>
-<br />
-<%= link_to 'New Field', new_field_path %>
-</div>
+<%= render file: 'fields/tiltscroll' %>

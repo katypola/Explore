@@ -29,4 +29,7 @@ class ArticleController < ApplicationController
     redirect_back(fallback_location: profile_path(@user.username))
   end
 
+  def tiltscroll
+  end
+
 end
