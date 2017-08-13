@@ -2,9 +2,13 @@
 #articleDiv {
 	text-align: center;
 
-	.newsImage {
-		// width: 60vw;
-		height: 40vh;
+	a {
+		text-decoration: none;
+
+		.newsImage {
+			// width: 60vw;
+			height: 40vh;
+		}
 	}
 
 	.addArticle {

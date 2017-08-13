@@ -1,11 +1,11 @@
 <div id="articleDiv">
 
 	<% @news_info.each do |article|  %>
+		<a href="<%= article.alink %>">
 		<h3><%= article.name %></h3>
-		<a href="<%= article.alink %>">Read full article</a><br />
 		<img class="newsImage" src="<%= article.picture %>" />
 		<p><%= article.date %></p>
-		<p><%= article.overview.html_safe %></p><br />
+		<p><%= article.overview.html_safe %></p></a><br />
 		<% if user_signed_in? %>
 			<div id="article_button_<%= article.id %>" class="article_button">
 				<% if article.favorited? current_user %>

@@ -1,25 +1,11 @@
 <div id="homeDiv">
 		<!-- show about us parallax homepage if user isn't signed in -->
 		<% if user_signed_in? %>
-			<h3>Welcome, <a href="/<%= current_user.username %>"><%= current_user.full_name %></a>!</h3><br /><br />
-			
-			<a class="fieldTiltLink" href="/fields">Browse Fields</a>
-
-			<!-- <h3>Fields:</h3>
-				<%# @fields.each do |field| %>
-					<a href="/fields/<%# field.id %>"><%# field.name %></a><br />
-				<%# end %> -->
-
 			<h3>Article feed:</h3>
 				<%= render file: "article/index" %>
 		<% else %>
-			<h3>Fields:</h3>
-				<% @fields.each do |field| %>
-					<a href="/fields/<%= field.id %>"><%= field.name %></a><br />
-				<% end %>
-
 			<h3>Article feed:</h3>
-				<p>Must be signed in to save articles</p>
+				<p><i>(Must be signed in to save articles)</i></p>
 				<%= render file: "article/index" %>
 		<% end %>
 </div>

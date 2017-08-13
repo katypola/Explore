@@ -47,6 +47,9 @@
         <li>
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
         </li>
+        <li class="explorerName">
+          Explorer: <a href="/<%= current_user.username %>"><%= current_user.full_name %></a>
+        </li>
         <% else %>
           <li onclick="signInModalShow()" class="navToModal">Sign In/Sign Up</li>
         <% end %>
@@ -54,7 +57,7 @@
     </nav>
   </div>
   <!-- sign in/sign up modal: -->
-    <div id="signInModal">
+    <div id="signInModal" class="modal">
       <%= render file: "devise/sessions/new" %>
       <%= render file: "devise/registrations/new" %>
       <br>

@@ -20,29 +20,21 @@
 // end of field show page
 
 // start of astronomy field page:
-// html, body {
-//   height: 100vh;
-//   min-height: 100vh;
-//   margin: 0;
-//   padding: 0;
-// }
-
-ul { // correcting built-in spacing
-    -webkit-margin-before: 0em;
-    -webkit-margin-after: 0em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    -webkit-padding-start: 0px;
+.section { // for content wrappers (w/ optional background img)
+	color: white;
+  	position: relative;
+  	background-size: cover;
+  	background-repeat: no-repeat;
+  	margin: 0;
+  	padding: 0;
+  	padding-left: 20vw;
+  	padding-right: 20vw;
+  	height: 100vh;
+  	width: 100vw;
 }
 
-.section { // for content wrappers (w/ optional background img)
-  position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw;
+.section.first, .section.second, .section.third {
+	padding-top: 20vh;
 }
 
 .section.final {
@@ -55,91 +47,7 @@ ul { // correcting built-in spacing
  	width: 100vw;
 	z-index: -2;
 	bottom: 0;
-}
-
-#stickyNav { // for everything pertaining to sticky nav
-	 padding-bottom: 15vh;
-
-.nav {
-  transition: all .5s ease;
-  font-size: 12px;
-  font-family: 'Open Sans', sans-serif;
-  width: 100%;
-  z-index: 100;
-  position: absolute;
-  top: 0;
-  left: 0;
-  letter-spacing: 2px;
-  line-height: 100px;
-  // padding-bottom: 20vh;
-  -webkit-transition-property: background-color, box-shadow, line-height, height;
-  transition-property: background-color, box-shadow, line-height, height;
-  -webkit-transition-timing-function: cubic-bezier(.78,.13,.15,.86);
-  transition-timing-function: cubic-bezier(.78,.13,.15,.86);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-
-  .brand{
-    /* padding: 15px 60px; */
-    /* line-height: 30px; */
-    line-height: 100px;
-    padding-left: 60px;
-    padding-right: 60px;
-    display: inline-block;
-    float: left;
-    font-size: 20px;
-    font-family: 'Pacifico', cursive;
-    -webkit-transition-property: background-color, box-shadow, line-height, height;
-    transition-property: background-color, box-shadow, line-height, height;
-    -webkit-transition-timing-function: cubic-bezier(.78,.13,.15,.86);
-    transition-timing-function: cubic-bezier(.78,.13,.15,.86);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-
-    a{
-      color: #E33B00;
-      text-decoration: none;
-    }
-    
-    /* padding-right: 60px; */
-  }
-  ul {
-    margin: 0;
-    text-transform: uppercase;
-    li{
-      text-align: center;
-      display: inline-block;
-      list-style: none;
-      padding: 15px 15px;
-      cursor: pointer;
-      line-height: 30px;
-      &:hover a{
-        font-weight: bold;
-      }
-      a{
-        color: #eee;
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-.sticky {
-    position: fixed !important;
-    top: 0;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-    /* box-shadow: 0 4px 5px -2px rgba(0,0,0,0.22), 0 2px 1px -1px rgba(0,0,0,0.05); */
-    background-color: #fff;
-    line-height: 30px;
-    .brand{
-      line-height: 60px;
-    }
-    ul li a{
-      color: #6E7982;
-    }
-    ul li:hover a{
-      color: #E33B00;
-    }
+	padding-top: 20vh;
 }
 
 .pattern-overlay {
@@ -148,11 +56,23 @@ ul { // correcting built-in spacing
     height: 100vh;
     left: 0;
     position: fixed;
-    // position: relative;
     top: 0;
     width: 100vw;
     z-index: -1;
-}
+
+    h3 {
+    	color: white;
+    	padding-left: 20vw;
+  		padding-right: 20vw;
+  		padding-top: 25vh;
+    }
+
+    p {
+    	color: white;
+    	padding-left: 20vw;
+  		padding-right: 20vw;
+    	padding-top: 1vh;
+    }
 }
 // end of astronomy field page
 

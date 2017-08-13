@@ -19,9 +19,11 @@ function signInModalShow(){
   document.getElementById('signInModal').style.display = "block";
   document.getElementById('signinDiv').style.display = "block";
   document.getElementById('userSignup').style.display = "none";
+  document.getElementById('signInModal').className = "signin";
 }
 // making sign up form render from sign in form in modal
 function signUpFormShow(){
+  document.getElementById('signInModal').className = "signup";
   document.getElementById('signinDiv').style.display = "none";
   document.getElementById('userSignup').style.display = "block";
 }
@@ -29,10 +31,12 @@ function signUpFormShow(){
 function signInFormShow(){
   document.getElementById('signinDiv').style.display = "block";
   document.getElementById('userSignup').style.display = "none";
+  document.getElementById('signInModal').className = "signin";
 }
 // making modal close when you click "close" button
 function closeSigninModal() {
   document.getElementById('signInModal').style.display = "none";
+  document.getElementById('signInModal').className = "modal";
 }
 
 function closeModal() {
