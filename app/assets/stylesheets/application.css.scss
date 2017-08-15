@@ -21,6 +21,35 @@ html, body {
 	margin: 0;
 	padding: 0;
 }
+
+h1, h2 {
+	font-family: 'Julius Sans One', sans-serif;
+} 
+
+h1 {
+	width: 55vw;
+	border-bottom: 3px solid #eee;
+	display: inline-block;
+	padding-bottom: 0.7vh;
+}
+
+h3 {
+	font-family: 'Quicksand', sans-serif;
+}
+
+h4 {
+	font-family: 'Rajdhani', sans-serif;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+body {
+	font-family: 'Catamaran', sans-serif;
+	font-size: 1.3vw;
+}
+
  // end of general formatting
 
 // start of navbar (sticky animated nav):
@@ -29,7 +58,7 @@ html, body {
 
 .nav {
   transition: all .5s ease;
-  font-size: 12px;
+  font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   width: 100%;
   z-index: 100;
@@ -54,8 +83,8 @@ html, body {
     padding-right: 60px;
     display: inline-block;
     float: left;
-    font-size: 20px;
-    font-family: 'Pacifico', cursive;
+    // font-size: 26px;
+    // font-family: 'Satisfy', cursive;
     -webkit-transition-property: background-color, box-shadow, line-height, height;
     transition-property: background-color, box-shadow, line-height, height;
     -webkit-transition-timing-function: cubic-bezier(.78,.13,.15,.86);
@@ -63,9 +92,21 @@ html, body {
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
 
+    img {
+    	padding-top: 0.5vh;
+    	height: 16.5vh;
+    	-webkit-transition-property: height;
+    	transition-property: height;
+    	-webkit-transition-timing-function: cubic-bezier(.78,.13,.15,.86);
+    	transition-timing-function: cubic-bezier(.78,.13,.15,.86);
+    	-webkit-transition-duration: 0.3s;
+    	transition-duration: 0.3s;
+    }
+
     a{
-      color: #E33B00;
-      text-decoration: none;
+      	color: white;
+      	text-decoration: none;
+      	// padding: 30px;
     }
     
     /* padding-right: 60px; */
@@ -73,24 +114,28 @@ html, body {
   ul {
     margin: 0;
     text-transform: uppercase;
+    padding-top: 3vh;
     li{
       text-align: center;
       display: inline-block;
       list-style: none;
       padding: 15px 15px;
+      // padding-top: 1.5vh;
       cursor: pointer;
       line-height: 30px;
       &:hover a{
         font-weight: bold;
+        color: #00e6b8;
       }
       a{
-        color: #eee;
+        color: #bfbfbf;
         text-decoration: none;
       }
     }
-    li.explorerName {
-    	padding-left: 10vw;
-    }
+    // li.explorerName {
+    // 	font-size: 13px;
+    // 	padding-left: 3.5vw;
+    // }
   }
 }
 
@@ -103,12 +148,16 @@ html, body {
     line-height: 30px;
     .brand{
       line-height: 60px;
+
+      img {
+      	height: 13.5vh;
+      }
     }
-    ul li a{
+    ul li a {
       color: #6E7982;
     }
-    ul li:hover a{
-      color: #E33B00;
+    ul li:hover a {
+      color: #4d94ff;
     }
 }
 }
@@ -167,7 +216,7 @@ div#signInModal {
     padding-bottom: 0.1vh;
     width: 30vw;
     text-align: center;
-    font-size: 1vw;
+    font-size: 1.3vw;
     background-color: rgba(255, 255, 255, .8);
     margin-left: 35vw;
     overflow-y: scroll;

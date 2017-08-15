@@ -23,6 +23,7 @@ class FieldsController < ApplicationController
   end
 
   def astronomy
+    @field = Field.find(params[:id])
   end
 
   # # GET /fields/tiltscroll

@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Quicksand|Rajdhani|Catamaran|Satisfy" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -23,7 +24,7 @@
   <div id="stickyNav">
     <nav id="nav" class="nav">
       <div class="brand">
-        <a href="/">MadSciExplorer</a>
+        <a href="#"><%= image_tag '/assets/logo.png', class: "navLogo" %></a>
       </div>
       <ul class="navbar">
         <li>
@@ -47,9 +48,9 @@
         <li>
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
         </li>
-        <li class="explorerName">
-          Explorer: <a href="/<%= current_user.username %>"><%= current_user.full_name %></a>
-        </li>
+        <!-- <li class="explorerName">
+          <a href="/<%# current_user.username %>">Explorer: <%= current_user.full_name %></a>
+        </li> -->
         <% else %>
           <li onclick="signInModalShow()" class="navToModal">Sign In/Sign Up</li>
         <% end %>

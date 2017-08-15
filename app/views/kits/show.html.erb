@@ -1,9 +1,9 @@
+<div id="kitShow">
+
 <h2><%= kit.name %></h2><br />
 
-<p>
-  <strong>Experiment:</strong><br />
-  <%= kit.experiment.title %>
-</p>
+  <p class="expName"><strong>Experiment:</strong><br />
+  <%= kit.experiment.title %></p>
 
 <p>
   <strong>Items:</strong><br />
@@ -11,6 +11,8 @@
   	<%= item.name %><br />
   <% end %>
 </p>
+
+</div>
 
 <p>
   <%= image_tag kit.image %>

@@ -8,9 +8,27 @@
 #postShowDiv {
 	text-align: center;
 	margin: 0 auto;
+	width: 60vw;
+	margin-left: 20vw;
+	background-color: #eee;
+	border: 1px solid #eee;
+	border-radius: 100px;
+	padding-top: 2vh;
+	padding-bottom: 5vh;
+	margin-top: 2vh;
+
+	h1 {
+		margin-bottom: 0vh;
+	}
+
+	h3 {
+		margin-bottom: 1.8vh;
+	}
 
 	img {
 		height: 40vh;
+		margin-top: 1.2vh;
+		margin-bottom: 3vh;
 	}
 }
 // end of post show page
@@ -21,13 +39,28 @@
 	width: 90vw;
 	margin: 0 auto;
 	display: inline-block;
+	margin-left: 5vw;
+	margin-top: 2vh;
+
+	h1 {
+		margin-bottom: 2vh;
+	}
 
 	.postPreview {
+		padding: 2%;
 		display: inline-block;
+		margin-top: 2vh;
 
 		img {
 			height: 25vh;
+			border-radius: 20px;
 		}
+	}
+
+	.postPreview:hover {
+		background-color: #eee;
+		border: 1px solid #eee;
+		border-radius: 40px;
 	}	
 }
 // end of post feed (index) page

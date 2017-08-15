@@ -1,6 +1,9 @@
 <div id="userExperimentDiv">
-<h2>Saved Experiments</h2>
+<h1>Saved Experiments</h1><br />
 <% if @user == current_user && (@user.experiments.nil? || @user.experiments == []) %>
+	<div class="backTabs">
+		<a class="articleAdd" href="/experiments">Add Experiments</a><br />
+	</div>
 	<p>Save some experiments!</p>
 <% elsif @user != current_user && (@user.experiments.nil? || @user.experiments == []) %>
 	<p>This user hasn't saved any experiments yet.</p>
@@ -8,18 +11,21 @@
 	<% @user.experiments.each do |experiment| %>
 		<div class="experimentPreview">
 			<a href="/experiments/<%= experiment.id %>">
-			<h4><%= experiment.title %></h4><br />
+			<h3><%= experiment.title %></h3><br />
 			<%= image_tag experiment.image %></a><br />
-			<a href="/fields/<%= experiment.field.id %>"><%= experiment.field.name %></a><br /><br />
+			<a href="/fields/<%= experiment.field.id %>"><h4><%= experiment.field.name %></h4></a><br /><br />
 		</div>
 	<% end %>
 <% else %>
+	<div class="backTabs">
+		<a class="articleAdd" href="/experiments">Add Experiments</a><br />
+	</div>
 	<% @user.experiments.each do |experiment| %>
 		<div class="experimentPreview">
 			<a href="/experiments/<%= experiment.id %>">
-			<h4><%= experiment.title %></h4><br />
+			<h3><%= experiment.title %></h3><br />
 			<%= image_tag experiment.image %></a><br />
-			<a href="/fields/<%= experiment.field.id %>"><%= experiment.field.name %></a>
+			<a href="/fields/<%= experiment.field.id %>"><h4><%= experiment.field.name %></h4></a>
 			<%= button_to 'Unsave Experiment', experiment_remove_path(experiment) %>
 			<br /><br />
 		</div>

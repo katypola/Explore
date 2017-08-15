@@ -1,9 +1,11 @@
-
+<% if @field.id == 1 %>
+	<%= render file: '/fields/astronomy', as: astro_path %>
+<% else %>
 
 <div id="fieldShowDiv">
-  <h1><%= @field.name %></h1>
-  <%= @field.overview %><br />
-  <span class="fieldShowImage"><%= image_tag @field.image %></span><br />
+  <h1><%= @field.name %></h1><br /><br />
+  <span class="fieldShowImage"><%= image_tag @field.image %></span><br /><br />
+  <%= @field.overview %><br /><br />
 
 <p>
   <strong>Experiments:</strong>
@@ -20,5 +22,7 @@
 <% if user_signed_in? && current_user.admin? %>
 	<%= link_to 'Edit', edit_field_path(@field) %><br />
 <% end %>
-<%= link_to 'See All Fields', fields_path %>
+<%# link_to 'See All Fields', fields_path %>
 </div>
+
+<% end %>

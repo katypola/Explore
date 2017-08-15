@@ -7,10 +7,10 @@
 			<i><%= @user.username %></i><br />
 			<span class="propicImg"><%= image_tag @user.propic %></span><br />
 			<p><strong>Location:</strong></p>
-			<%= @user.location["name"] %><br />
+			<%= @user.location["name"] %><br /><br />
 		</div>
-		<a class="savedArticlesLink" href="/<%= @user.username %>/article"><h4>Saved Articles</h4></a><br />
-		<a class="savedExperimentsLink" href="/<%= @user.username %>/experiment"><h4>Saved Experiments</h4></a><br />
+		<a class="savedArticlesLink" href="/<%= @user.username %>/article"><h4>Articles</h4></a>
+		<a class="savedExperimentsLink" href="/<%= @user.username %>/experiment"><h4>Experiments</h4></a>
 		<a class="userPostsLink" href="/<%= @user.username %>/post"><h4>Posts</h4></a>
 	</div>
 

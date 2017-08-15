@@ -1,18 +1,22 @@
 <div id="userPostDiv">
-<h2>Posts</h2>
+<h1>Posts</h1><br />
 	<% if user_signed_in? && current_user == @user %>
 		<% if (@user.posts.nil? || @user.posts == []) %>
-			<h4>Add some posts to your profile!</h4>
-			<a class="newPostsLink" href="/<%= @user.username %>/new"><h3>New Post</h3></a>
+			<div class="backTabs">
+				<a class="newPostsLink" href="/<%= @user.username %>/new">New Post</a><br />
+			</div>
+			<h3>Add some posts to your profile!</h3>
 		<% else %>
-			<a class="newPostsLink" href="/<%= @user.username %>/new"><h3>New Post</h3></a>
+			<div class="backTabs">
+				<a class="newPostsLink" href="/<%= @user.username %>/new">New Post</a><br />
+			</div>
 			<% @user.posts.each do |post| %>
 				<div class="postPreview">
 					<a href="/posts/<%= post.id %>">
 						<%= image_tag post.image %><br />
-						<%= post.title %></a><br />
-					<a class="editPostsLink" href="/<%= @user.username %>/edit/<%= post.id %>">Edit</a> | 
-					<%= link_to 'Delete', post, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
+						<h3><%= post.title %></h3></a><br />
+					<!-- <a class="editPostsLink" href="/<%# @user.username %>/edit/<%# post.id %>">Edit</a> | 
+					<%# link_to 'Delete', post, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %> -->
 				</div>
 			<% end %>
 		<% end %>
@@ -23,7 +27,7 @@
 			<div class="postPreview">
 				<a href="/posts/<%= post.id %>">
 					<%= image_tag post.image %><br />
-					<%= post.title %></a>
+					<h3><%= post.title %></h3></a>
 			</div>
 		<% end %>
 	<% end %>

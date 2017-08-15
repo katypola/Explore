@@ -1,6 +1,6 @@
 <div id="experimentIndex">
 
-<h1>Experiments</h1>
+<div class="h1Div"><h1>Experiments</h1></div><br />
 	<% if user_signed_in? && current_user.admin? %>
 		<%= link_to 'New Experiment', new_experiment_path %> | 
 		<%= link_to 'New Experiment Step', new_step_path %><br />
@@ -8,8 +8,8 @@
   	<% @experiments.each do |experiment| %>
   		<div class="experimentPreview">
 			<a href="/experiments/<%= experiment.id %>">
-    		<h3><%= experiment.title %></h3></a><br />
-    		<a href="/fields/<%= experiment.field.id %>"><h4><%= experiment.field.name %></h4></a><br />
+    		<h3><%= experiment.title %></h3></a>
+    		<a href="/fields/<%= experiment.field.id %>"><h4><%= experiment.field.name %></h4></a>
     		<a href="/experiments/<%= experiment.id %>"><%= image_tag experiment.image %></a><br />
     		<% if user_signed_in? && UserExperiment.find_by(experiment_id: experiment.id, user_id: current_user.id) %>
       			<%= button_to 'Unsave Experiment', experiment_remove_path(experiment) %>

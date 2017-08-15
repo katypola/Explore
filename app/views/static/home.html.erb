@@ -1,10 +1,10 @@
 <div id="homeDiv">
 		<!-- show about us parallax homepage if user isn't signed in -->
 		<% if user_signed_in? %>
-			<h3>Article feed:</h3>
+			<h1>Top National Geographic Articles</h1>
 				<%= render file: "article/index" %>
 		<% else %>
-			<h3>Article feed:</h3>
+			<h1>Top National Geographic Articles</h1>
 				<p><i>(Must be signed in to save articles)</i></p>
 				<%= render file: "article/index" %>
 		<% end %>

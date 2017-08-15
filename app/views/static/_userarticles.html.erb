@@ -1,12 +1,16 @@
 <div id="userArticleDiv">
-	<h2>Saved Articles</h2>
+	<h1>Saved Articles</h1><br />
 
 	<% if user_signed_in? && current_user == @user %>
 		<% if (@user.articles.nil? or @user.articles == []) %>
+			<div class="backTabs">
+				<a class="articleAdd" href="/">Add Articles</a><br />
+			</div>
 			<h3>Save some articles to your profile!</h3>
-			<a class="articleAdd" href="/">Add Articles</a>
 		<% else %>
-			<a class="articleAdd" href="/">Add Articles</a><br />
+			<div class="backTabs">
+				<a class="articleAdd" href="/">Add Articles</a><br />
+			</div>
 			<% @user.articles.each do |article| %>
 				<span class ="articleDiv">
 					<a class="articlePreview" href="<%= article.alink %>">

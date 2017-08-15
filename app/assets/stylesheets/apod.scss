@@ -1,5 +1,85 @@
 // start of astronomy main page:
-#astroMain {
+#apodMain {
 	text-align: center;
+	padding-left: 15vw;
+	padding-right: 15vw;
+	padding-top: 3vh;
+
+	h1 {
+		margin-bottom: 0px;
+	}
+
+	.backTabs {
+		margin-top: 0px;
+		margin-bottom: 3vh;
+		width: 20vw;
+		display: inline-block;
+	}
+
+	.backTabs a {
+		padding-left: 1vw;
+		padding-right: 1vw;
+		background-color: #eee;
+		border: 1px solid #eee;
+		display: inline-block;
+		border-radius: 0px 0px 20px 20px;
+	}
+
+	.backTabs a:hover {
+		color: white;
+		background-color: #bfbfbf;
+	}
+
+	.apodDiv {
+		margin-top: 1.5vh;
+		margin-bottom: 10vh;
+
+		img {
+			height: 75vh;
+			// width: 80vw;
+			margin: 0 auto;
+			border-radius: 30px;
+			margin-top: 1vh;
+			margin-bottom: 0.4vh;
+		}
+	}
 }
 // end of astronomy main page
+
+h1 {
+		margin-bottom: 0px;
+	}
+
+	.experimentTabs {
+		margin-top: 0px;
+		margin-bottom: 2vh;
+		width: 20vw;
+		display: inline-block;
+	}
+
+	.experimentTabs a {
+		padding-left: 1vw;
+		padding-right: 1vw;
+		background-color: #eee;
+		border: 1px solid #eee;
+		display: inline-block;
+	}
+
+	.experimentTabs a.stepLink {
+		border-radius: 0px 0px 0px 20px;
+		// border-right: 1px solid #4d4d4d;	
+	}
+
+	.experimentTabs a.kitLink {
+		border-radius: none;
+		// border-right: 1px solid #4d4d4d;
+	}
+
+	.experimentTabs a.expPostLink {
+		border-radius: 0px 0px 20px 0px;
+	}
+
+	.experimentTabs a:hover {
+		color: white;
+		background-color: #bfbfbf;
+	}

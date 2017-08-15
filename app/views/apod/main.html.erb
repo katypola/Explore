@@ -1,11 +1,15 @@
-<div id="astroMain">
-	<h1>This will be the Astronomy main page.</h1><br />
-
+<div id="apodMain">
+<h1>NASA's Astronomy Pictures of the Day</h1><br />
+	<div class="backTabs">
+		<a class="astroBackTab" href="/fields/1/astronomy">Back to Astronomy Page</a>
+	</div>
 	<% @nasa_info.each do |apod| %>
-		<h1><%= apod["title"] %></h1>
-		<img src="<%= apod["url"] %>" />
-		<p><%= apod["date"] %></p>
-		<p><%= apod["explanation"] %></p>
+		<div class="apodDiv">
+			<h2><%= apod["title"] %></h2>
+			<img src="<%= apod["url"] %>" />
+			<p><%= apod["date"] %></p>
+			<p><%= apod["explanation"] %></p>
+		</div>
 	<% end %>
 
 </div>

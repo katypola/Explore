@@ -1,7 +1,9 @@
 <div id="experimentPostDiv">
-	<h2>Posts</h2>
+	<h2>Posts</h2><br />
 		<% if user_signed_in? %>
-			<a class="newPostLink" href="/experiments/<%= @experiment.id %>/new"><h3>New Post</h3></a>
+			<div class="backTabs">
+				<a class="newPostLink" href="/experiments/<%= @experiment.id %>/new">New Post</a><br />
+			</div>
 		<% end %>
 		<% @posts.each do |post| %>
 			<% if @experiment == post.experiment %>

@@ -17,6 +17,8 @@ document.addEventListener("turbolinks:load", function(){
           $navbar.removeClass("sticky");  
         }
     });
+
+    // $('.ar').parallax("2vw", 2.4);
     
     // //section sticky
     // $(document).scroll(function() {
