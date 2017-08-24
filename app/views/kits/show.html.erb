@@ -11,12 +11,8 @@
   	<%= item.name %><br />
   <% end %>
 </p>
-
-</div>
-
-<p>
   <%= image_tag kit.image %>
-</p>
+</div>
 
 <% if user_signed_in? && current_user.admin? %>
 	<%= link_to 'Edit', edit_kit_path(kit) %>

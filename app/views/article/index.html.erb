@@ -1,11 +1,18 @@
-<div id="articleDiv">
+<div class="articleHome" style="background: url('/assets/news.jpg'); background-size: cover;     background-attachment: fixed;">
+	<% if user_signed_in? %>
+		<h1>Top National Geographic Articles</h1><br />
+	<% else %>
+		<h1>Top National Geographic Articles</h1><br />
+			<p><i>(Must be signed in to save articles)</i></p>
+	<% end %>
 
 	<% @news_info.each do |article|  %>
+		<div id="articleDiv">
 		<a href="<%= article.alink %>">
 		<h3><%= article.name %></h3>
 		<img class="newsImage" src="<%= article.picture %>" />
-		<p><%= article.date %></p>
-		<p><%= article.overview.html_safe %></p></a><br />
+		<p class="articleDate"><%= article.date %></p>
+		<p><%= article.overview.html_safe %></p></a>
 		<% if user_signed_in? %>
 			<div id="article_button_<%= article.id %>" class="article_button">
 				<% if article.favorited? current_user %>
@@ -15,6 +22,7 @@
       			<% end %>
      		</div>
 		<% end %>
+		</div>
 	<% end %>
 	
 </div>

@@ -1,4 +1,10 @@
-# README
+# MadSciExplorer
+
+Need a good idea for a science fair project, or just a fun activity for the weekend?  MadSciExplorer lets you search across a variety of scientific fields and experiments for anything from making your own volcano to reenacting an eclipse with flashlights or making your own webpage.  
+
+This site was a passion project; I've always loved science and would've loved a resource to find new experiments.
+
+It also incorporates a news API pulling the current top articles from National Geographic, as well as a NASA API to show pictures from the NASA Astronomy Picture of the Day.
 
 ## Features Used
 

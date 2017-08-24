@@ -2,7 +2,7 @@
 <h1>Saved Experiments</h1><br />
 <% if @user == current_user && (@user.experiments.nil? || @user.experiments == []) %>
 	<div class="backTabs">
-		<a class="articleAdd" href="/experiments">Add Experiments</a><br />
+		<a class="articleAdd" href="/experiments">Add Experiments</a>
 	</div>
 	<p>Save some experiments!</p>
 <% elsif @user != current_user && (@user.experiments.nil? || @user.experiments == []) %>

@@ -1,12 +1,44 @@
 // start of astronomy main page:
 #apodMain {
+	// background: url('/assets/stars.jpg');
+	// background-size: contain;
+	// background-position: relative;
+	// background-attachment: fixed;
+	// background-position: repeat;
 	text-align: center;
 	padding-left: 15vw;
 	padding-right: 15vw;
-	padding-top: 3vh;
+	padding-top: 20vh;
+	height: 100vh;
+    left: 0;
+    // position: fixed;
+    top: 0;
+    width: 100vw;
+    // z-index: -1;
+
+    background: url('/assets/stars.jpg');
+    background-size: cover;
+    height: 100vh;
+    padding-left: 15vw;
+	padding-right: 15vw;
+	padding-top: 20vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    overflow-y: scroll;
+    // z-index: -1;
+
 
 	h1 {
+		color: white;
+		text-shadow: 3px 3px 3px black;
 		margin-bottom: 0px;
+	}
+
+	h2 {
+		color: white;
+		text-shadow: 3px 3px 3px black;
 	}
 
 	.backTabs {
@@ -33,9 +65,24 @@
 	.apodDiv {
 		margin-top: 1.5vh;
 		margin-bottom: 10vh;
+		padding: 1%;
+		background-color: rgba(255, 255, 255, 0.3);
+		border-radius: 20px;
+
+		p {
+			line-height: 1.5;
+			padding-left: 4vw;
+			padding-right: 4vw;
+		}
+
+		p.apodExplain {
+			color: white;
+			// text-shadow: 1px black;
+		}
 
 		img {
 			height: 75vh;
+			max-width: 60vw;
 			// width: 80vw;
 			margin: 0 auto;
 			border-radius: 30px;

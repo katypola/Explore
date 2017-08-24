@@ -11,6 +11,10 @@
 		padding: 2%;
 		display: inline-block;
 		margin-top: 2vh;
+		background-color: none;
+		border: 0px solid white;
+		border-radius: 0;
+		transition: all 500ms ease;
 
 		.fieldImageSpan {
 			width: 25vw;
@@ -28,10 +32,6 @@
 				vertical-text-align: center;
 			}
 		}
-
-		// p {
-		// 	margin-bottom: 0vh;
-		// }
 	}
 
 	.fieldPreview:hover {
@@ -177,18 +177,14 @@
     width: 100vw;
     z-index: -1;
 
-    h3 {
-    	color: white;
-    	padding-left: 20vw;
-  		padding-right: 20vw;
-  		padding-top: 25vh;
-    }
-
     p {
+    	text-align: center;
+    	text-shadow: 3px 3px 3px black;
     	color: white;
+    	font-size: 3vw;
     	padding-left: 20vw;
   		padding-right: 20vw;
-    	padding-top: 1vh;
+    	padding-top: 31vh;
     }
 }
 // end of astronomy field page

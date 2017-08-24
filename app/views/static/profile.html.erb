@@ -4,10 +4,10 @@
 		<div id="userInfo">
 			<h2><%= @user.full_name %></h2><br />
 			<p><strong>Username:</strong></p>
-			<i><%= @user.username %></i><br />
-			<span class="propicImg"><%= image_tag @user.propic %></span><br />
+			<i><%= @user.username %></i><br /><br />
+			<span class="propicImg"><%= image_tag @user.propic %></span><br /><br />
 			<p><strong>Location:</strong></p>
-			<%= @user.location["name"] %><br /><br />
+			<i><%= @user.location["name"] %></i><br /><br />
 		</div>
 		<a class="savedArticlesLink" href="/<%= @user.username %>/article"><h4>Articles</h4></a>
 		<a class="savedExperimentsLink" href="/<%= @user.username %>/experiment"><h4>Experiments</h4></a>

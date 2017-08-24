@@ -41,6 +41,11 @@ h4 {
 	font-family: 'Rajdhani', sans-serif;
 }
 
+a {
+	color: rgba(109, 51, 255, 0.9);
+	transition: all 400ms ease;
+}
+
 a:hover {
 	text-decoration: none;
 }
@@ -48,6 +53,25 @@ a:hover {
 body {
 	font-family: 'Catamaran', sans-serif;
 	font-size: 1.3vw;
+}
+
+button, input[type=submit] {
+	font-family: 'Julius Sans One', sans-serif;
+	font-size: 1.2vw;
+	padding: 1%;
+	border-radius: 40px;
+	padding-left: 1vh;
+	padding-right: 1vh;
+	background-color: white;
+	color: #001133;
+	margin-top: 0.6vh;
+	margin-bottom: 0.6vh;
+	transition: all 500ms ease;
+}
+
+button:hover, input[type=submit]:hover {
+	color: rgba(0, 43, 128, 0.9);
+	background-color: rgba(179, 204, 255, 0.7);
 }
 
  // end of general formatting
@@ -126,11 +150,26 @@ body {
       &:hover a{
         font-weight: bold;
         color: #00e6b8;
+        text-shadow: 0px 0px;
       }
       a{
-        color: #bfbfbf;
+      	color: #bfbfbf;
         text-decoration: none;
+        text-shadow: 1px 1px black;
       }
+    }
+
+    li.signInLi {
+    	color: #bfbfbf;
+    	font-weight: normal;
+        text-decoration: none;
+        text-shadow: 1px 1px black;
+        transition: all 500ms ease;
+	}
+    li.signInLi:hover {
+        font-weight: bold;
+        color: #00e6b8;
+        text-shadow: 0px 0px;
     }
     // li.explorerName {
     // 	font-size: 13px;
@@ -216,7 +255,7 @@ div#signInModal {
     padding-bottom: 0.1vh;
     width: 30vw;
     text-align: center;
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     background-color: rgba(255, 255, 255, .8);
     margin-left: 35vw;
     overflow-y: scroll;
@@ -245,11 +284,22 @@ div#signInModal {
 // toggle classes to position modal:
 div#signInModal.signin {
 	margin-top: 8vh;
+	font-size: 1.2vw;
 }
 
 div#signInModal.signup {
 	top: 0;
-	margin-top: 2vh;
+	margin-top: 4.5vh;
+	font-size: 1.2vw;
+
+	input#user_propic {
+		display: inline-block;
+		margin-left: 5vw;
+	}
+
+	div.form-group {
+		margin-bottom: 0.6vh;
+	}
 }
 // end of sign in/sign up modal
 
@@ -262,6 +312,10 @@ div#signInModal.signup {
 		width: 20vw;
 		overflow-x: scroll;
 		display: inline-block;
+	}
+
+	span#signUpLink {
+		color: rgba(109, 51, 255, 0.9);
 	}
 }
 // end of sessions/new (sign in) form
@@ -278,6 +332,10 @@ div#signInModal.signup {
 			overflow-x: scroll;
 			display: inline-block;
 		}
+	}
+
+	span#signInLink {
+		color: rgba(109, 51, 255, 0.9);
 	}
 }
 // end of user registration/new (sign up) form
@@ -299,8 +357,9 @@ div#signInModal.signup {
 // end of user registration/edit form
 
 // start of home div:
-#homeDiv {
+.homeDiv {
 	text-align: center;
 	margin: 0 auto;
+	margin-top: 2vh;
 }
 // end of home div

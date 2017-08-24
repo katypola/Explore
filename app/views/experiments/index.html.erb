@@ -8,9 +8,15 @@
   	<% @experiments.each do |experiment| %>
   		<div class="experimentPreview">
 			<a href="/experiments/<%= experiment.id %>">
-    		<h3><%= experiment.title %></h3></a>
+
+      <div class="experimentImageSpan" style="background:url('<%= experiment.image.url %>'); background-size:cover; background-position:center; background-repeat:no-repeat;">  
+      <!-- <br /><br /><br /><br /><br /> -->
+      </div>
+      <p><strong><%= experiment.title %></strong></p></a>
+
+    		<!-- <h3><%# experiment.title %></h3></a> -->
     		<a href="/fields/<%= experiment.field.id %>"><h4><%= experiment.field.name %></h4></a>
-    		<a href="/experiments/<%= experiment.id %>"><%= image_tag experiment.image %></a><br />
+    		<!-- <a href="/experiments/<%# experiment.id %>"><%# image_tag experiment.image %></a><br /> -->
     		<% if user_signed_in? && UserExperiment.find_by(experiment_id: experiment.id, user_id: current_user.id) %>
       			<%= button_to 'Unsave Experiment', experiment_remove_path(experiment) %>
     		<% else %>
@@ -22,5 +28,4 @@
   			<%# end %> -->
     	</div>
   	<% end %>
-
 </div>
