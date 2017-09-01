@@ -10,7 +10,11 @@
 		<div id="articleDiv">
 		<a href="<%= article.alink %>">
 		<h3><%= article.name %></h3>
-		<img class="newsImage" src="<%= article.picture %>" />
+		<% if article.picture %>
+			<img class="newsImage" src="<%= article.picture %>" />
+		<% else %>
+			<br /><h4>This article doesn't have an image.</h4><br />
+		<% end %>
 		<p class="articleDate"><%= article.date %></p>
 		<p><%= article.overview.html_safe %></p></a>
 		<% if user_signed_in? %>

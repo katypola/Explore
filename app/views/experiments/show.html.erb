@@ -29,11 +29,11 @@
     <span class="experimentImageSpan"><%= image_tag @experiment.image %></span><br />
     <%= @experiment.overview %>
 
-<span class="experiment_panel hideSteps<%= " active" if params[:pg] == "steps" %>"><%= render 'steps', exper: @experiment %></span>
+<span class="experiment_panel hideSteps<%= " active" if params[:pg] == "steps" %>" id="steps"><%= render 'steps', exper: @experiment %></span>
 <br />
-<span class="experiment_panel hideExpPosts<%= " active" if params[:pg] == "posts" %>"><%= render 'posts', exper: @experiment %></span>
+<span class="experiment_panel hideExpPosts<%= " active" if params[:pg] == "posts" %>" id="posts"><%= render 'posts', exper: @experiment %></span>
 <br />
-<span class="experiment_panel hideNewPostLink<%= " active" if params[:pg] == "new" %>">
+<span class="experiment_panel hideNewPostLink<%= " active" if params[:pg] == "new" %>" id="new">
   <h1>New Post</h1><br />
   <%= render 'posts/form', exper: @experiment, method: :new %>
 </span>
