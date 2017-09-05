@@ -43,3 +43,10 @@ function closeModal() {
   document.getElementById('kitModal').style.display = "none";
   document.getElementById('signInModal').style.display = "none";
 }
+
+
+// $("#stepClick").click(function() {
+//     $('html, body').animate({
+//         scrollTop: parseInt($("#steps").offset().top)
+//     }, 1000);
+// });

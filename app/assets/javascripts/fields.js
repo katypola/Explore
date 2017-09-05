@@ -50,6 +50,26 @@ document.addEventListener("turbolinks:load", function(){
     //     }
     // });
 
+
 })(jQuery, undefined);
+
+    // if($(#steps).length > 0){
+    //     // $('html, body').animate({ scrollTop: $(#steps).offset().top}, 1000);
+        
+    //     $('html, body').animate( { scrollTop: $(#steps).offset().top }, 1000 );
+    // }
+
+    $("#stepClick").click(function() {
+
+        window.scrollTo(0, $("#steps").offset().top);
+
+        // document.getElementById('steps').scrollIntoView()
+
+        // $('body').scrollTo('#steps');
+
+        // $('html, body').animate({
+        //     scrollTop: $("#steps").offset().top
+        //     }, 1000);
+    });
 
 });
