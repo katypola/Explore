@@ -2,7 +2,11 @@
 <!-- fixed div w/ user info to navigate profile page -->
 	<div id="userNavDiv" class="col-md-2">
 		<div id="userInfo">
-			<h2><%= @user.full_name %></h2><br />
+			<h2><%= @user.full_name %></h2>
+			<% if user_signed_in? && current_user == @user %>
+				<a id="editUser" href="/users/edit">Edit Profile</a>
+			<% end %>
+			<br /><br />
 			<p><strong>Username:</strong></p>
 			<i><%= @user.username %></i><br /><br />
 			<span class="propicImg"><%= image_tag @user.propic %></span><br /><br />

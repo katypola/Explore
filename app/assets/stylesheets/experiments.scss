@@ -238,3 +238,22 @@
 	}
 }
 // end of experiment index
+
+// start of new experiment:
+div#newExperimentDiv {
+	text-align: center;
+	margin: 0 auto;
+
+	input#experiment_title {
+		width: 30vw;
+		margin: 0 auto;
+	}
+
+	textarea#experiment_overview {
+		width: 40vw;
+		height: 20vh;
+		overflow-y: scroll;
+		margin: 0 auto;
+	}
+}
+// end of new experiment

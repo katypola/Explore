@@ -1,24 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div id="stepShow">
+
+<h1>Step</h1><br />
+
+<%= link_to 'Edit Step', edit_step_path(@step) %> | 
+<%= link_to 'See Experiment', @step.experiment %><br /><br />
 
 <p>
-  <strong>Number:</strong>
+  <h3>Number:</h3>
   <%= @step.number %>
-</p>
+</p><br />
 
 <p>
-  <strong>Body:</strong>
+  <h3>Body:</h3>
   <%= @step.body %>
-</p>
+</p><br />
 
 <p>
-  <strong>Image:</strong>
-  <%= @step.image %>
-</p>
+  <h3>Image:</h3>
+  <%= image_tag @step.image %>
+</p><br />
 
 <p>
-  <strong>Experiment:</strong>
-  <%= @step.experiment %>
-</p>
+  <h3>Experiment:</h3>
+  <%= @step.experiment.title %>
+</p><br /><br />
 
-<%= link_to 'Edit', edit_step_path(@step) %> |
-<%= link_to 'Back', steps_path %>
+</div>

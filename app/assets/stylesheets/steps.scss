@@ -7,3 +7,36 @@
 	}
 }
 // end of step index
+
+// start of step show:
+div#stepShow {
+	margin: 0 auto;
+	text-align: center;
+	padding-left: 10vw;
+	padding-right: 10vw;
+	margin-top: 6vh;
+
+	img {
+		height: 30vh;
+	}
+}
+// end of step show
+
+// start of edit step and new step:
+div#stepEdit, div#stepNew {
+	text-align: center;
+	margin: 0 auto;
+
+	input#step_number {
+		width: 4vw;
+		margin: 0 auto;
+	}
+
+	textarea#step_body {
+		margin: 0 auto;
+		width: 30vw;
+		height: 16vh;
+		overflow-y: scroll;
+	}
+}
+// end of edit step and new step
