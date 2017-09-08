@@ -1,10 +1,10 @@
 <% if user_signed_in? && current_user.admin? %>
 
 <div id="editKit">
-	<h1>Editing Kit</h1>
-	<%= render 'form', kit: @kit %>
+	<h1>Editing Kit</h1><br />
 	<%= link_to 'See Kit', @kit %> |
-	<%= link_to 'See All Kits', kits_path %>
+	<%= link_to 'See All Kits', kits_path %><br /><br />
+	<%= render 'form', kit: @kit %>
 </div>
 
 <% end %>

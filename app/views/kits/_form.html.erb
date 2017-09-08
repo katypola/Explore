@@ -4,6 +4,12 @@
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :image %>
+    <%= f.input :kit_items %>
+
+    	<% @kit.kit_items.each do |kit_item| %>
+			<%= kit_item.item.name %><br />
+		<% end %><br />
+
     <%= f.association :experiment %>
   </div>
 
