@@ -1,5 +1,7 @@
 <% if @field.id == 1 %>
 	<%= render file: '/fields/astronomy', as: astro_path %>
+<% elsif @field.id == 2 %>
+	<%= render file: '/fields/chemistry', as: chem_path %>
 <% else %>
 
 <div id="fieldShowDiv">

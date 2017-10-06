@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :experiments, through: :user_experiments
   has_many :user_kits, dependent: :destroy
   has_many :kits, through: :user_kits
-  has_many :kit_items, dependent: :destroy
+  has_many :kit_items
   has_many :items, through: :kit_items
   has_many :user_articles, dependent: :destroy
   has_many :articles, through: :user_articles

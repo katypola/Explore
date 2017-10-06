@@ -26,6 +26,10 @@ class FieldsController < ApplicationController
     @field = Field.find(params[:id])
   end
 
+  def chemistry
+    @field = Field.find(params[:id])
+  end
+
   # # GET /fields/tiltscroll
   # def tiltscroll
   # end
