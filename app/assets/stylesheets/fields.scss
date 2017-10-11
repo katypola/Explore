@@ -75,6 +75,15 @@
   		padding-left: 6vw;
 
   	}
+
+  	span.chemName {
+  		text-align: center;
+  		font-size: 12vw;
+  		color: rgba(0, 230, 230, 0.9);
+  		text-shadow: 5px 5px black;
+  		font-family: 'Satisfy', cursive;
+  		padding-left: 7vw;
+  	}
 }
 
 .section.first, .section.second, .section.third {
@@ -168,7 +177,7 @@
 }
 
 .pattern-overlay {
-    background: url('/assets/astro1.jpg');
+    background: url('/assets/chem_bg1.jpg');
     background-size: cover;
     height: 100vh;
     left: 0;
