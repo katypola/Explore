@@ -28,7 +28,7 @@ document.addEventListener("turbolinks:load", function(){
         }
     });
 
-    //scroll sticky nav for astronomy page
+    //scroll sticky nav for home page
     $(document.getElementsByClassName('articleHome')).scroll(function() {
         var scrollTop = $(this).scrollTop();
         if (scrollTop > 0) {
