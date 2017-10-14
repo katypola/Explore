@@ -1,17 +1,17 @@
 <div id="stickyNav">
 
 <!-- <div class="ar"></div> -->
-<section class="section first" style="background: url('/assets/chem_bg1.jpg'); background-size: cover;     background-attachment: fixed;">
+<section class="section first" style="background: url('/assets/geology.jpg'); background-size: cover;     background-attachment: fixed;">
 <div class="ar"></div>
-  <span class ="chemName">Geology</span>
+  <span class ="geoName fieldName">Geology</span>
   
 </section>
-<section class="section second" style="background: url('/assets/chem_bg2.jpg'); background-size: cover;     background-attachment: fixed;">
+<section class="section second" style="background: url('/assets/earthsci1.jpg'); background-size: cover;     background-attachment: fixed;">
   <span>Check out *fun geology videos/facts/etc*</span><br /><br />
   <!-- <a class="apodLink" href="/apod/main">Go Star Searching</a> -->
   
 </section>
-<section class="section third" style="background: url('/assets/chem_bg3.jpg'); background-size: cover;     background-attachment: fixed;">
+<section class="section third" style="background: url('/assets/geology2.jpg'); background-size: cover;     background-attachment: fixed;">
   <span>Browse all experiments related to geology:</span><br /><br />
     <% if @field.experiments %>
       <% @field.experiments.each do |experiment| %>
@@ -22,12 +22,12 @@
     <% end %>
   
 </section>
-<section class="section final" style="background: url('/assets/chem_bg1.jpg'); background-size: cover;     background-attachment: fixed;">
+<section class="section final" style="background: url('/assets/geology.jpg'); background-size: cover;     background-attachment: fixed;">
   
 </section>
-<div class="pattern-overlay">
+<div id="geoPattern" class="pattern-overlay">
     <!-- <h3>This is the last section.</h3> -->
-    <p>Fun explanation of chemistry and what you can do with it!</p>
+    <p>Fun explanation of geology and what you can do with it!</p>
 </div>
 
 </div>
