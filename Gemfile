@@ -32,7 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Use devise gem for creating secure users
 gem 'devise'
 # Use paperclip gem for uploading images
-gem "paperclip", "~> 5.0.0"
+gem "paperclip", "~> 5.2.0"
 # Use simpleform gem for creating intuitive forms
 gem 'simple_form'
 
