@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170807194954) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "apods", force: :cascade do |t|
     t.integer "apodid"
     t.string "apodtitle"
@@ -38,8 +41,8 @@ ActiveRecord::Schema.define(version: 20170807194954) do
 
   create_table "comments", force: :cascade do |t|
     t.string "body"
-    t.integer "user_id"
-    t.integer "post_id"
+    t.bigint "user_id"
+    t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
@@ -53,7 +56,7 @@ ActiveRecord::Schema.define(version: 20170807194954) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
-    t.integer "field_id"
+    t.bigint "field_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["field_id"], name: "index_experiments_on_field_id"
@@ -77,8 +80,8 @@ ActiveRecord::Schema.define(version: 20170807194954) do
   end
 
   create_table "kit_items", force: :cascade do |t|
-    t.integer "kit_id"
-    t.integer "item_id"
+    t.bigint "kit_id"
+    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_kit_items_on_item_id"
@@ -91,7 +94,7 @@ ActiveRecord::Schema.define(version: 20170807194954) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
-    t.integer "experiment_id"
+    t.bigint "experiment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["experiment_id"], name: "index_kits_on_experiment_id"
@@ -110,8 +113,8 @@ ActiveRecord::Schema.define(version: 20170807194954) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
-    t.integer "user_id"
-    t.integer "experiment_id"
+    t.bigint "user_id"
+    t.bigint "experiment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["experiment_id"], name: "index_posts_on_experiment_id"
@@ -135,15 +138,15 @@ ActiveRecord::Schema.define(version: 20170807194954) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
-    t.integer "experiment_id"
+    t.bigint "experiment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["experiment_id"], name: "index_steps_on_experiment_id"
   end
 
   create_table "user_articles", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "article_id"
+    t.bigint "user_id"
+    t.bigint "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_user_articles_on_article_id"
@@ -151,8 +154,8 @@ ActiveRecord::Schema.define(version: 20170807194954) do
   end
 
   create_table "user_experiments", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "experiment_id"
+    t.bigint "user_id"
+    t.bigint "experiment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["experiment_id"], name: "index_user_experiments_on_experiment_id"
@@ -160,8 +163,8 @@ ActiveRecord::Schema.define(version: 20170807194954) do
   end
 
   create_table "user_fields", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "field_id"
+    t.bigint "user_id"
+    t.bigint "field_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["field_id"], name: "index_user_fields_on_field_id"
@@ -169,8 +172,8 @@ ActiveRecord::Schema.define(version: 20170807194954) do
   end
 
   create_table "user_kits", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "kit_id"
+    t.bigint "user_id"
+    t.bigint "kit_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["kit_id"], name: "index_user_kits_on_kit_id"
@@ -198,11 +201,19 @@ ActiveRecord::Schema.define(version: 20170807194954) do
     t.datetime "propic_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "location_id"
+    t.bigint "location_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["location_id"], name: "index_users_on_location_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "experiments", "fields"
+  add_foreign_key "kits", "experiments"
+  add_foreign_key "posts", "experiments"
+  add_foreign_key "posts", "users"
+  add_foreign_key "steps", "experiments"
+  add_foreign_key "users", "locations"
 end
