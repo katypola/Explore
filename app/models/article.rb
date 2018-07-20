@@ -2,12 +2,11 @@ class Article < ApplicationRecord
 	has_many :user_articles, dependent: :destroy
 	has_many :users, through: :user_articles, dependent: :destroy
 
-  # require 'net/http'
-
 	def self.get_api_info
 
+    # ADDED 7/19 to try to fix API problem:
     require 'net/http'
-    
+
     # 1) Retrieve all the articles from the database
 		news_api = "https://newsapi.org/v1/articles?source=national-geographic&sortBy=top&apiKey=#{ENV['NEWS_API_KEY']}"
 		request_to_news_api = Net::HTTP.get(URI(news_api))

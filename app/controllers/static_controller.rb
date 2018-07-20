@@ -1,5 +1,9 @@
 class StaticController < ApplicationController
-	def home
+	
+  # ADDED 7/19 to try to fix API problem:
+  require 'net/http'
+
+  def home
 		@news_info = Article.get_api_info[0..3]
 		@fields = Field.all
 		# @field = Field.find_by(params[:id])

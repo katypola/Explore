@@ -1,4 +1,8 @@
 class ArticleController < ApplicationController
+  
+  # ADDED 7/19 to try to fix API problem:
+  require 'net/http'
+
   before_action :authenticate_user!
   def index
 	  @news_info = Article.get_api_info[0..3]
