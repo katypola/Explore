@@ -11,8 +11,6 @@ gem 'rails', '~> 5.1.2'
 # Use PG, NOT sqlite3 as the database for Active Record
 gem 'pg', '<1.0'
 
-gem 'pg_loader'
-
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
