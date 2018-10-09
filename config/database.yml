@@ -14,7 +14,7 @@ default: &default
 
 development:
   <<: *default
-  # adapter: postgresql
+  adapter: postgresql
   database: madsciexplorer_development
   pool: 5
   timeout: 5000
@@ -25,11 +25,12 @@ development:
 test:
   <<: *default
   database: madsciexplorer_test
-  # pool: 5
-  # timeout: 5000
+  pool: 5
+  timeout: 5000
 
 production:
   <<: *default
+  adapter: postgresql
   database: madsciexplorer_production
-  # pool: 5
-  # timeout: 5000
+  pool: 5
+  timeout: 5000
