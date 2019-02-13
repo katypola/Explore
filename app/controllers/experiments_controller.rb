@@ -11,11 +11,16 @@ class ExperimentsController < ApplicationController
   # GET /experiments/1.json
   def show
     @steps = Step.all
-    @step = Step.find_by(params[:id])
+    # was:
+    # @step = Step.find_by(params[:id])
+    # corrected:
+    @step = Step.find_by(id: params[:id])
     # @kits = Kit.all
     # @kits = @experiment.kits
-
-    @item = Item.find_by(params[:id])
+    # was:
+    # @item = Item.find_by(params[:id])
+    # corrected:
+    @item = Item.find_by(id: params[:id])
     @posts = Post.all
     @post = params[:post_id] ? Post.find(params[:post_id]) : Post.new
   end

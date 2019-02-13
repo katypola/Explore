@@ -1,12 +1,12 @@
 <div id="postShowDiv">
   <h1><%= @post.title %></h1><br />
-    <a href="/<%= @user.username %>/post"><h3><%= @post.user.username %></h3></a>
+    <a href="/<%= @post.user.username %>/post"><h3><%= @post.user.username %></h3></a>
     <a href="/experiments/<%= @post.experiment.id %>"><h4>Experiment: <%= @post.experiment.title %></h4></a>
     <%= image_tag @post.image %><br />
     <%= @post.body %><br /><br />
 
     <% if @post.user == current_user %>
-      <a class="editPostsLink" href="/<%= @user.username %>/edit/<%= @post.id %>">Edit</a> | 
+      <a class="editPostsLink" href="/<%= @post.user.username %>/edit/<%= @post.id %>">Edit</a> | 
       <%= link_to 'Delete', @post, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %><br />
       <%# link_to 'Edit', edit_post_path(@post) %> 
       <%# link_to 'My Posts', profile_path(@post.user.username,:post) %>
