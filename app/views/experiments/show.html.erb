@@ -2,7 +2,7 @@
 
   <h1><%= @experiment.title %></h1><br />
   <div class="experimentTabs">
-    <a class="stepLink" id="stepClick" href="/experiments/<%= @experiment.id %>/steps">Steps</a>
+    <a class="stepLink" id="stepClick" href="/experiments/<%= @experiment.id %>/steps#stepAnchor">Steps</a>
     <!-- <a class="stepLink<%# " inactive" if params[:pg] == "steps" %>" href="/experiments/<%# @experiment.id %>/steps">Steps</a> -->
     <% if @experiment.kits %>
       <% @experiment.kits.each do |kit| %>
@@ -11,7 +11,7 @@
           <button type="button" name="button" onclick="closeModal()">Close</button></span>
       <% end %>
     <% end %>
-    <a class="expPostLink" href="/experiments/<%= @experiment.id %>/posts">Posts</a>
+    <a class="expPostLink" href="/experiments/<%= @experiment.id %>/posts#postAnchor">Posts</a>
     <!-- <a class="expPostLink<%# " inactive" if params[:pg] == "posts" %>" href="/experiments/<%# @experiment.id %>/posts">Posts</a> -->
   </div>
   <% if user_signed_in? && current_user.admin? %>
@@ -28,6 +28,11 @@
     <% end %>
     <span class="experimentImageSpan"><%= image_tag @experiment.image %></span><br />
     <%= @experiment.overview %>
+    <span id="postAnchor"></span>
+    <span id="stepAnchor"></span>
+    <br />
+    <br />
+    <br />
 
 <span class="experiment_panel hideSteps<%= " active" if params[:pg] == "steps" %>" id="steps"><%= render 'steps', exper: @experiment %></span>
 <br />
