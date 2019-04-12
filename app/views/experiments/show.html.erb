@@ -2,7 +2,8 @@
 
   <h1><%= @experiment.title %></h1><br />
   <div class="experimentTabs">
-    <a class="stepLink" id="stepClick" href="/experiments/<%= @experiment.id %>/steps#stepAnchor">Steps</a>
+    <!-- Was #stepAnchor before, changed to #steps to try new anchor tag smooth scroll method: -->
+    <a class="stepLink scrollLink" id="stepClick" href="/experiments/<%= @experiment.id %>/steps#hiddenDiv">Steps</a>
     <!-- <a class="stepLink<%# " inactive" if params[:pg] == "steps" %>" href="/experiments/<%# @experiment.id %>/steps">Steps</a> -->
     <% if @experiment.kits %>
       <% @experiment.kits.each do |kit| %>
@@ -11,7 +12,8 @@
           <button type="button" name="button" onclick="closeModal()">Close</button></span>
       <% end %>
     <% end %>
-    <a class="expPostLink" href="/experiments/<%= @experiment.id %>/posts#postAnchor">Posts</a>
+    <!-- Was #postAnchor before, changed to #posts to try new anchor tag smooth scroll method: -->
+    <a class="expPostLink scrollLink" href="/experiments/<%= @experiment.id %>/posts#hiddenDiv">Posts</a>
     <!-- <a class="expPostLink<%# " inactive" if params[:pg] == "posts" %>" href="/experiments/<%# @experiment.id %>/posts">Posts</a> -->
   </div>
   <% if user_signed_in? && current_user.admin? %>
@@ -28,20 +30,24 @@
     <% end %>
     <span class="experimentImageSpan"><%= image_tag @experiment.image %></span><br />
     <%= @experiment.overview %>
-    <span id="postAnchor"></span>
+
+    <!-- Previous attempt with anchor tags (before adding smooth scroll): -->
+    <!-- <span id="postAnchor"></span>
     <span id="stepAnchor"></span>
     <br />
     <br />
-    <br />
+    <br /> -->
 
-<span class="experiment_panel hideSteps<%= " active" if params[:pg] == "steps" %>" id="steps"><%= render 'steps', exper: @experiment %></span>
-<br />
-<span class="experiment_panel hideExpPosts<%= " active" if params[:pg] == "posts" %>" id="posts"><%= render 'posts', exper: @experiment %></span>
-<br />
-<span class="experiment_panel hideNewPostLink<%= " active" if params[:pg] == "new" %>" id="new">
-  <h1>New Post</h1><br />
-  <%= render 'posts/form', exper: @experiment, method: :new %>
-</span>
+  <div id="hiddenDiv">
+    <span class="experiment_panel hideSteps<%= " active" if params[:pg] == "steps" %>" id="steps"><%= render 'steps', exper: @experiment %></span>
+    <br />
+    <span class="experiment_panel hideExpPosts<%= " active" if params[:pg] == "posts" %>" id="posts"><%= render 'posts', exper: @experiment %></span>
+    <br />
+    <span class="experiment_panel hideNewPostLink<%= " active" if params[:pg] == "new" %>" id="new">
+      <h1>New Post</h1><br />
+      <%= render 'posts/form', exper: @experiment, method: :new %>
+    </span>
+  </div>
 
   <%# link_to 'See All Experiments', experiments_path %>
 
