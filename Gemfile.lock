@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/sass/sassc-rails.git
+  revision: 95f47ca22cc45b329b3e707326e6a7008c216488
+  specs:
+    sassc-rails (2.1.0)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -164,6 +175,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (2.0.1)
+      ffi (~> 1.9)
+      rake
     selenium-webdriver (3.13.1)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
@@ -222,6 +236,7 @@ DEPENDENCIES
   rails (~> 5.1.2)
   rails_12factor
   sass-rails (~> 5.0)
+  sassc-rails!
   selenium-webdriver
   simple_form
   spring
