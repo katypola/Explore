@@ -40,7 +40,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 # Use devise gem for creating secure users
-gem 'devise'
+gem "devise", ">= 4.6.0"
 # Use paperclip gem for uploading images
 gem "paperclip", "~> 5.2.0"
 # Use simpleform gem for creating intuitive forms
